@@ -1,2 +1,2 @@
-class DepositMoney < Operations
+class DepositMoney < Operation
 end
