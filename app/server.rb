@@ -8,12 +8,13 @@ require 'sinatra/reloader' if Sinatra::Base.environment == :development
 class App < Sinatra::Application
   set :root, File.dirname(__FILE__)
   set :database_file, File.join(settings.root, 'config', 'database.yml')
-
+  enable :sessions
   configure :development do
     enable :logging
     logger = Logger.new(STDOUT)
     logger.level = Logger::DEBUG
     set :logger, logger
+    
 
     register Sinatra::Reloader
     after_reload do
