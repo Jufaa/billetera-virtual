@@ -1,0 +1,2 @@
+class DepositMoney < Operations
+end
