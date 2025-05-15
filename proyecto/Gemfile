@@ -8,11 +8,9 @@ source "https://rubygems.org"
 # gemas usadas
 
 gem 'sinatra', '~> 4.1'
-
+gem 'sinatra-contrib'
 gem 'rackup'
-
 gem 'puma', '~> 6.6'
-
-
-
-
+gem 'sinatra-activerecord'
+gem 'sqlite3'
+gem 'rake'
