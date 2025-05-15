@@ -1,5 +1,5 @@
 class Account < ActiveRecord::Base
     belongs_to :user
-    has_many :cards
-    has_many :operations
+    has_many :card
+    has_many :operation
 end
