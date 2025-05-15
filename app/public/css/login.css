@@ -1,48 +1,92 @@
-body{
-    background-color: #EAEAE3;
-    margin:0;
-    height: 100vh;
-    
-}
-div{
-    background-color: #E3DAC9;
-    width: 930px;
-    height: 580px;
-    margin-left: 50px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    border-radius: 20px;
-    justify-content: start; 
-    align-items: normal;
-}
-form{
-    margin-left: 20px;
-}
-p{
-    border-radius: 20px;
-}
-input{
-    height: 40px;;
-    width: 90%;
-    border-radius: 10px;
-    border-color: black;
-    border-style: solid;
-    margin-bottom: 20px;
-}
-.text-fw{
-    font-family: 'Nunito', sans-serif;
-    font-weight: 900;
-    font-size: 28px;
-}
-label{
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-}
+ body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #EAEAE3;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-input[type="submit"]{
-    
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    font-size: 16px;
+        .login-container {
+            background-color: #EAEAE3;
+            padding: 2rem;
+            margin-bottom: 10rem;
+        }
+
+        .form-container{
+            background-color: #E3DAC9;
+            width: 1262px;
+            height: 278px;
+
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            
+        }
+        
+        .logo img {
+            height: 343px;
+        }
+
+        label {
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.3rem;
+            color: #333;
+        }
+        form{
+            padding-left: 4rem;
+            padding-top: 1rem;
+        }
+        input[type="email"],
+        input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            display: center;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .button-container button {
+            width: 40%;
+            padding: 10px;
+            font-size: 1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .btn-login {
+            background-color: #141414;
+            color: white;
+        }
+
+        .btn-register {
+            background-color: #8D8B80;
+            color: white;
+            margin-right:6.2rem;
+        }
+
+        .links {
+            margin-top: 1rem;
+            text-align: left;
+        }
+
+        .links a {
+            text-decoration: none;
+            color: #000;
+            font-size: 0.9rem;
+        }
+    }
 }

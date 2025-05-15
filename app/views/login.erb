@@ -10,29 +10,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="contenedor">
-        <% if @error_menssage %>
-        <p style="color:red"><% @error_menssage %></p>
+    <div class="login-container">
+     <% if @error_message %>
+        <p style="color: red;"><% @error_message %></p>
         <% end %>
+        <div class="logo">
+            <img src="/media/logo.png" alt="Logo Rupay">
+        </div>
+        <div class="form-container">
         <form action="/login" method="post">
-            <h1 class="text-fw">Bienvenido!</h1>
-            <br>
-            <label for="name">Ingrese su nombre: </label>
-            <br>
-            <input type="text" id="name" name="name" placeholder="Nombre" required>
-            <br>
-            <label for="password">Ingrese su contraseña</label>
-            <br>
-            <input type="password" id="password" name="password" required>
-            <br>
-            <br>
-            <a href="www.hla.com">Olvido su contraseña?</a>
-            <br>
-            <p>No tienes cuenta todavia?<a href="/registro"> Registrate!</a></p>
-            <br>
-            <br>
-            <input type="submit" value="Iniciar Sesion">
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
+
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" placeholder="Contraseña" required>
+
+            <div class="button-container">
+                <button type="submit" class="btn-login">Ingresar</button>
+                <button type="button" class="btn-register" onclick="location.href='/register'">Crear Cuenta</button>
+            </div>
+            <div class="links">
+                <a href="/recuperar">Olvidaste tu contraseña?</a>
+            </div>
         </form>
+        </div>
     </div>
 </body>
 </html>

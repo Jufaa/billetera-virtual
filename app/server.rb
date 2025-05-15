@@ -41,11 +41,11 @@ class App < Sinatra::Application
     end
   end
 
-  get '/registro' do
-    erb :registro
+  get '/register' do
+    erb :register
   end 
 
-  post '/registro' do
+  post '/register' do
     user = User.find_by(mail: params[:mail]) || User.find_by(name: params[:name])
     if user
       @error_message = "Usted ya tenia una cuenta previa"
@@ -57,7 +57,7 @@ class App < Sinatra::Application
         redirect '/login'
       else
         @error_message = "Error al crear la cuenta"
-        erb :registro
+        erb :register
       end
     end
   end
