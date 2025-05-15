@@ -41,11 +41,11 @@ class App < Sinatra::Application
     end
   end
 
-  get '/resgistro' do
+  get '/registro' do
     erb :registro
   end 
 
-  post '/resgistro' do
+  post '/registro' do
     user = User.find_by(mail: params[:mail]) || User.find_by(name: params[:name])
     if user
       @error_message = "Usted ya tenia una cuenta previa"
