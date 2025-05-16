@@ -21,7 +21,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_15_221932) do
     t.index ["user_id"], name: "index_accounts_on_user_id"
   end
 
-  create_table "addmoney", force: :cascade do |t|
+  create_table "deposite_money", force: :cascade do |t|
     t.integer "numeroOp"
     t.float "monto"
     t.date "fecha_dinero_ingresado"
