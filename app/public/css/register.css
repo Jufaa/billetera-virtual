@@ -12,6 +12,7 @@ body {
     align-items: center;
     height: 100vh;
     gap: 30px;
+    margin-top: 5%;
     
 }
 
@@ -20,8 +21,9 @@ body {
     background-color: #E3DAC9;
     padding: 30px 40px;
     border-radius: 6px;
-        width:926px;
+    width:926px;
     box-sizing: border-box;
+    margin-bottom: 5%;
 }
 
    .logo {

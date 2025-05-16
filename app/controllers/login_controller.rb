@@ -4,12 +4,12 @@ class LoginController < Sinatra::Base
   end
 
   post '/login' do
-    user =  User.find_by(name: params[:name], password: params[:password])
+    user = User.find_by(name: params[:name], password: params[:password])
     if user
-      session[:user_id] = user.id
-      redirect to('/') # ::TODO: Redirigir a la página de menú
+      session[:user_id]=user.id
+      redirect '/menu'
     else
-      @error_message = "Invalid username or password"
+      @error_message = "Nombre de usuario o contraseña son incorrectas"
       erb :login
     end
   end
