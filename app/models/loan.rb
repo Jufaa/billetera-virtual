@@ -1,3 +1,3 @@
 class Loan < Operation
-    enum TLoanState: { pagado: 0, por_vencer: 1, vencido: 2 }
+    enum type_loan: { payed: 0, close_to_expiration: 1, expired: 2 }
 end
