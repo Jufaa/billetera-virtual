@@ -1,4 +1,6 @@
 class LoginController < Sinatra::Base
+  
+  set :views, File.expand_path('../../views', __FILE__) #Para que encuentre al login correctamente cuando centralize con el login_controller
   get '/login' do
     erb :login
   end
