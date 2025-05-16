@@ -1,8 +1,8 @@
 class CreatePets < ActiveRecord::Migration[8.0]
   def change
     create_table :pets do |t|
-      t.string :nro_mascota
-      t.integer :tipo_mascota
+      t.string :pet_number
+      t.integer :pet_type
       t.references :user, null: false, foreign_key: true
       t.timestamps
     end
