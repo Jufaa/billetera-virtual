@@ -69,10 +69,11 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_16_133131) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "lastname"
-    t.string "cuit"
+    t.string "dni"
     t.date "birth_date"
-    t.string "address"
+    t.string "email"
     t.string "phone_number"
+    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
