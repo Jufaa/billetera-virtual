@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,9 +11,10 @@
 </head>
 <body>
     <div class="login-container">
-     <% if @error_message %>
-        <p style="color: red;"><% @error_message %></p>
+        <% if @error_message %>
+        <p style="color: red;"><%= @error_message %></p>
         <% end %>
+
         <div class="logo">
             <img src="/media/logo.png" alt="Logo Rupay">
         </div>

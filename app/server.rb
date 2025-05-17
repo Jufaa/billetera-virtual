@@ -6,11 +6,14 @@ require 'logger'
 require 'sinatra/reloader' if Sinatra::Base.environment == :development
 require './controllers/login_controller' #para usar los controllers
 require './controllers/register_controller' #para usar los controllers
+require './controllers/main_menu_controller' #para usar los controllers
 
 class App < Sinatra::Application
   set :root, File.dirname(__FILE__)
   set :database_file, File.join(settings.root, 'config', 'database.yml')
   enable :sessions
+   set :session_secret, 'a' *64
+ 
   configure :development do
     enable :logging
     logger = Logger.new(STDOUT)
@@ -26,15 +29,13 @@ class App < Sinatra::Application
 
   use LoginController
   use RegisterController
+  use MainMenuController
 
   get '/' do
     redirect '/login'
   end
 
   
-  get '/logout' do
-    session.clear
-    redirect '/login'
-  end
+ 
     
 end
