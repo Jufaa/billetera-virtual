@@ -3,11 +3,13 @@
 
 # DIAGRAMA UML
 ![Diagrama de Clases - Grupo 10 drawio](https://github.com/user-attachments/assets/b9298b49-64c3-40d0-9e1b-39a540eb168c)
-https://drive.google.com/file/d/1bGfUMXjBw3ji2TYIJSkKbB0ZT_W2hdK0/view?usp=sharing
-https://drive.google.com/file/d/11k4Qds8zxOr46fZ-6Mwgs84K6CXW7yBf/view?usp=sharing
-https://drive.google.com/file/d/1xBy8lRa81AA8PCpUkMtr5HqwQyHeYPL8/view?usp=sharing
-https://drive.google.com/file/d/16yYSsxhQxERH0ZOdrKBdVMCIuf4qQvoE/view?usp=sharing
-https://drive.google.com/file/d/1jGVZaiDSqDG3knOx0AE9iyKPp_Kn4ayJ/view?usp=sharing
-https://drive.google.com/file/d/1O7izngBG6yJHly_InR07vOXwKrcF_tsX/view?usp=sharing
-https://drive.google.com/file/d/16gm-haqh1baLz0Aao1aebd6idbr9jSHi/view?usp=sharing
+![imagen](https://github.com/user-attachments/assets/dcce79dc-0bfd-4dcc-87d3-b0404e9e66bd)
+![imagen](https://github.com/user-attachments/assets/844ae87e-bdbb-4a0d-ae42-4694b1e6a80c)
+![imagen](https://github.com/user-attachments/assets/9ed6436b-d845-4344-9abd-fa02b185d5f8)
+![imagen](https://github.com/user-attachments/assets/91b91369-4a10-4b35-aabf-74e59b5808e7)
+![imagen](https://github.com/user-attachments/assets/afdd6807-07a7-402a-98d5-a8945ba954bc)
+![imagen](https://github.com/user-attachments/assets/59cf1414-ca00-4a8b-b9c9-76afbf522239)
+![imagen](https://github.com/user-attachments/assets/ccbecc0e-067f-4b26-93d3-f0bd755fa4c7)
+
+
 Link para edición: https://drive.google.com/file/d/10XjVzXCYOb_KORrmrF59MDSFgImeK6V5/view?usp=drive_link
