@@ -8,5 +8,6 @@ docker compose exec app bundle exec rake db:migrate (levantar migraciones)
 sqlite3 db/wallet_development.sqlite3 (ingresar a la base de datos con sqlite)
 .tables (lista todas las tablas de la bd)
 .schema (lista las tablas con los atributos y sus tipos)
+...
 
 
