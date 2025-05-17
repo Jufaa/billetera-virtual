@@ -5,8 +5,10 @@ docker compose build (crear docker)
 docker compose up app (levantar aplicacion)
 docker compose exec app bundle exec rake db:create (levantar base de datos)
 docker compose exec app bundle exec rake db:migrate (levantar migraciones)
+docker run --rm -it -v "$PWD/db:/db" nouchka/sqlite3 /db/wallet_development.sqlite3 (usar sqlite3)
 sqlite3 db/wallet_development.sqlite3 (ingresar a la base de datos con sqlite)
 .tables (lista todas las tablas de la bd)
 .schema (lista las tablas con los atributos y sus tipos)
 
+...
 
