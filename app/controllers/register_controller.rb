@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require_relative '../models/user'
 
-class RegisterController < Sinatra::Base
+class RegisterController < ApplicationController
   set :views, File.expand_path('../../views', __FILE__) #Para que encuentre al register correctamente cuando centralize con el register_controller
   get '/register' do
     erb :register

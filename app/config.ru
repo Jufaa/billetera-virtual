@@ -2,7 +2,9 @@ require './server'
 require './controllers/login_controller'
 require './controllers/register_controller'
 require './controllers/main_menu_controller'
+require './controllers/my_profile_controller'
 use LoginController
 use RegisterController
 use MainMenuController
+use MyProfileController
 run App

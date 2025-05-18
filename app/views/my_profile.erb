@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rupay</title>
-    <link rel="stylesheet" type="text/css" href="/css/mainMenu.css">
+    <link rel="stylesheet" type="text/css" href="/css/myProfile.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="barra">
+  <div class="barra">
         <div class="izquierda">
             <img src="/media/profile.png" alt="Foto perfil">
             <div class="button">
@@ -20,18 +20,28 @@
             <button class="helpB">❔Ayuda</button>
             <img src="/media/logo.png" alt="Logo Rupay">
         </div>
-    </div>
-
-    <div class="balance-section">
-        <h2>Tu dinero</h2>
-        <p class="balance">$4000</p>
-        <div class="action-buttons">
-            <button class="deposit-btn">Ingresar Dinero</button>
-            <button class="transfer-btn">Transferir Dinero</button>
+  </div>
+  <div class="hub-head">
+        <div class="hub-pic">
+            <button class="profilePicB">
+                <img src="/media/profile.png" alt="picB">
+            </button>
         </div>
-    </div>
-
-    <div class="menu-section">
+        <div class="text-head">
+            <div class="name">
+                <span class="textH"><%= current_user.name%></span>
+                <span class="textH"><%= current_user.lastname%></span>
+            </div>
+            <span class="textH1"><%= current_user.email%></span>
+        </div>
+  </div>
+  <div class="hub-body">
+        <div class="hub-pic">
+        </div>
+        <div class="text-head">
+        </div>
+  </div>
+  <div class="menu-section">
         <table class="menu-table">
             <tbody>
                 <tr>
@@ -61,6 +71,6 @@
                 </tr>
             </tbody>
         </table>
-    </div>
+  </div>
 </body>
 </html>
