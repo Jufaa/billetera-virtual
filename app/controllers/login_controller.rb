@@ -1,7 +1,8 @@
-require 'sinatra/base'
+
+require_relative 'application_controller'
 require_relative '../models/user'
 
-class LoginController < Sinatra::Base
+class LoginController < ApplicationController
   set :views, File.expand_path('../../views', __FILE__)
 
   get '/login' do
@@ -21,7 +22,6 @@ class LoginController < Sinatra::Base
 end
 
 
-  # Cierra sesión
   get '/logout' do
     session.clear
     redirect to('/login')
