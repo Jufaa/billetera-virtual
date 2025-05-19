@@ -1,16 +1,15 @@
-
-.hub-head{
-      margin-left: 20%;
-      margin-right: 20%;
-      margin-top: 2%;
-      height: 100px;
-      padding: 10px;
-      display: flex;
-      justify-content: flex-start;
-      position: relative;
-      background-color: white;
-      border-radius: 10px;
-
+.hub-head {
+    margin-top: 2%;
+    margin-left: 20%;
+    margin-bottom: 2%;
+    height: 100px;
+    width: 300%;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
 }
 
 .hub-pic{
@@ -25,7 +24,6 @@
     align-items: flex-start;    
     text-align: left;           
 }
-
 
 .name {
   display: flex;
@@ -47,7 +45,7 @@
     color: #505045;
 }
 
-.profilePicB {
+.hub-b {
     background-color: transparent;
     color: #505045;
     border: none;
@@ -60,15 +58,65 @@
 }
 
 .hub-body{
-      margin-left: 20%;
-      margin-right: 20%;
-      margin-top: 2%;
-      height: 300px;
-      padding: 10px;
-      display: flex;
-      justify-content: flex-start;
-      position: relative;
-      background-color: white;
-      border-radius: 10px;    
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 10px;
+    margin-top: 10%;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    background-color: white;
+    border-radius: 10px;  
+    height: 300px;
+    width: 300%;
+    flex-direction: column;  
 }
+
+.user-data{
+    height:100px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.account-data{
+    height:100px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 25px;
+}
+
+.cards{
+    height:100px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.user-data img{
+    height: 100px;
+}
+
+.account-data img{
+    height: 80px;
+    margin-left: 15px;
+}
+
+.cards img{
+    height: 100px;
+}
+
+.buttonP {
+    margin-left: auto;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0 20px;
+    color: #333;
+}
+
+.buttonP:hover {
+    color: #000;
+}
+
 
