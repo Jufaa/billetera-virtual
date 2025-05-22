@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_15_221932) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_16_133131) do
   create_table "accounts", force: :cascade do |t|
-    t.string "nro_cuenta"
+    t.string "account_number"
     t.string "cbu"
     t.string "alias"
     t.integer "user_id", null: false
@@ -21,23 +21,23 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_15_221932) do
     t.index ["user_id"], name: "index_accounts_on_user_id"
   end
 
-  create_table "addmoney", force: :cascade do |t|
-    t.integer "numeroOp"
-    t.float "monto"
-    t.date "fecha_dinero_ingresado"
-  end
-
   create_table "cards", force: :cascade do |t|
-    t.integer "nro_tarjeta"
-    t.date "fecha_vencimiento"
-    t.string "nombre_titular"
-    t.string "apellido_titular"
-    t.string "banco_asociado"
-    t.integer "tipo_tarjeta"
+    t.integer "card_number"
+    t.date "expiration_date"
+    t.string "owner_name"
+    t.string "owner_lastname"
+    t.string "associated_bank"
+    t.integer "card_type"
     t.integer "account_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["account_id"], name: "index_cards_on_account_id"
+  end
+
+  create_table "deposite_money", force: :cascade do |t|
+    t.integer "operation_number"
+    t.integer "amount"
+    t.date "date_money_deposited"
   end
 
   create_table "operations", force: :cascade do |t|
@@ -45,21 +45,21 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_15_221932) do
     t.integer "account_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "numero_transferencia"
-    t.float "monto"
-    t.date "fecha_transferencia"
-    t.integer "tipo_movimiento"
-    t.integer "numero_cuenta_destino"
-    t.float "monto_prestado"
-    t.float "monto_a_pagar"
-    t.date "fecha_vencimiento"
-    t.integer "estado_prestamo"
+    t.integer "transfer_number"
+    t.integer "amount"
+    t.date "transfer_date"
+    t.integer "movement_type"
+    t.integer "destiny_account_number"
+    t.integer "given_amount"
+    t.integer "total_amount"
+    t.date "expiration_date"
+    t.integer "loan_state"
     t.index ["account_id"], name: "index_operations_on_account_id"
   end
 
   create_table "pets", force: :cascade do |t|
-    t.string "nro_mascota"
-    t.integer "tipo_mascota"
+    t.string "pet_number"
+    t.integer "pet_type"
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -67,12 +67,13 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_15_221932) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "nombre"
-    t.string "apellido"
-    t.string "cuit"
-    t.date "fecha_nacimiento"
-    t.string "direccion"
-    t.string "celular"
+    t.string "name"
+    t.string "lastname"
+    t.string "dni"
+    t.date "birth_date"
+    t.string "email"
+    t.string "phone_number"
+    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

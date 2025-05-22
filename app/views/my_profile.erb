@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rupay</title>
+    <link rel="stylesheet" type="text/css" href="/css/mainMenu.css">
+    <link rel="stylesheet" type="text/css" href="/css/myProfile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="barra">
+        <div class="izquierda">
+            <img src="/media/profile.png" alt="Foto perfil">
+            <div class="button">
+                <span class="textB"><%= current_user.name %></span>
+                <button type="button" class="profileB" onclick="location.href='/my_profile'">Perfil</button>
+            </div>
+        </div>
+        <div class="derecha">
+            <button class="helpB">❔Ayuda</button>
+            <img src="/media/logo.png" alt="Logo Rupay">
+        </div>
+  </div>
+  <div class="main-content">
+        <div class="main-left">
+            <table class="menu-table">
+            <tbody>
+                <tr>
+                    <td><button class="menu-btn" onclick="location.href='/main_menu'">
+                        <img src="/media/house.png" alt="Inicio" class="icon">
+                        Inicio</button></td>
+                </tr>
+                <tr>
+                    <td><button class="inv-btn">
+                        <img src="/media/trending-up.png" alt="Inversiones"class="icon">
+                        Inversiones</button></td>
+                </tr>
+                <tr>
+                    <td><button class="ben-btn">
+                        <img src="/media/gift.png" alt="Beneficios" class="icon">
+                        Beneficios</button></td>
+                </tr>
+                <tr>
+                    <td><button class="pet-btn">
+                        <img src="/media/paw-print.png" alt="Mascotas"class="icon">
+                        Mascotas</button></td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+        <div class ="main-right">
+            <div class="hub-head">
+                <div class="hub-pic">
+                <button class="hub-b">
+                    <img src="/media/profile.png" alt="picB">
+                </button>
+                </div>
+                <div class="text-head">
+                    <div class="name">
+                        <span class="textH"><%= current_user.name%></span>
+                        <span class="textH"><%= current_user.lastname%></span>
+                    </div>
+                <span class="textH1"><%= current_user.email%></span>
+                </div>
+            </div>
+            <div class="hub-body">
+                <div class="user-data">
+                    <div class="data-pic">
+                        <img src="/media/user.png" alt="dataP">
+                    </div>
+                    <div class="user-text">
+                        <p><strong>Usuario </strong></p>
+                        <p>Informacion de tu usuario</p>
+                    </div>
+                    <button class="buttonP">
+                        <p> > </p>
+                    </button>
+                </div>
+                <div class="account-data">
+                    <div class="account-pic">
+                        <img src="/media/profile.png" alt="accountP">
+                    </div>
+                    <div class="account-text">
+                        <p> <strong>Cuenta </strong></p>
+                        <p>Informacion de tu cuenta de Rupay</p>
+                    </div>
+                    <button class="buttonP">
+                        <p> > </p>
+                    </button>
+                </div>
+                <div class="cards">
+                    <div class="card-pic">
+                        <img src="/media/cards.png" alt="cardP">
+                    </div>
+                    <div class="cards-text">
+                        <p> <strong>Tarjetas </strong></p>
+                        <p>Tarjetas asociadas en tu cuenta</p>
+                    </div>
+                    <button class="buttonP">
+                        <p> > </p>
+                    </button>
+                </div>
+            </div>
+        </div>
+  </div>
+</body>
+</html>

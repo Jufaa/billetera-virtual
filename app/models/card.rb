@@ -1,4 +1,4 @@
 class Card < ActiveRecord::Base
     belongs_to :account
-    enum TCard: { debito: 0, credito: 1 }
+    enum type_card: { debit: 0, credit: 1 }
 end

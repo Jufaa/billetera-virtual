@@ -1,12 +1,15 @@
 class CreateUsers < ActiveRecord::Migration[8.0]
   def change
     create_table :users do |t|
-      t.string :nombre
-      t.string :apellido
-      t.string :cuit
-      t.date :fecha_nacimiento
-      t.string :direccion
-      t.string :celular
+      t.string "name"
+      t.string "lastname"
+      t.string "dni"
+      t.date "birth_date"
+      t.string "email"
+      t.string "phone_number"
+      t.string "password"
+      t.datetime "created_at", null: false
+      t.datetime "updated_at", null: false
 
       t.timestamps
     end
