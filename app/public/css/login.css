@@ -1,4 +1,4 @@
- body {
+body {
             font-family: 'Nunito', sans-serif;
             background-color: #EAEAE3;
             margin: 0;
@@ -88,5 +88,3 @@
             color: #000;
             font-size: 0.9rem;
         }
-    }
-}
