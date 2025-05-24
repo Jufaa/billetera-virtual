@@ -25,6 +25,7 @@ class RegisterController < ApplicationController
     )
 
     if @user.save
+      @user.update(cvu:"000000000000000#{@user.id.to_s.rjust(4, '0')}", alias:"#{@user.name.downcase}.#{@user.lastname.downcase}.rupay",money_balance:"4000")
       redirect to('/login')
     else
        puts @user.errors.full_messages

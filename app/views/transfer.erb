@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rupay</title>
-    <link rel="stylesheet" type="text/css" href="/css/mainMenu.css">
+    <title>Transferir</title>
+    <link rel="stylesheet" type="text/css" href="/css/transfer.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -50,11 +50,21 @@
         </div>
         <div class ="main-right">
             <div class="balance-section">
-                <h2>Tu dinero</h2>
-                <p class="balance">$<%= current_user.money_balance %></p>
+                <h2>Transferir a una cuenta</h2>
                 <div class="action-buttons">
-                    <button class="deposit-btn">Ingresar Dinero</button>
-                    <button class="transfer-btn" onclick="location.href='/transfer'">Transferir Dinero</button>
+                    <form action="/transfer" method="post">
+                        <label for="alias">Ingrese el alias o cvu</label>
+                        <br>
+                        <input type="text" name="alias" id="alias" placeholder="Ingrese el alias o cvu" required>
+                        <br>
+                        <label for="Dinero">Cuánto desea transferir? Usted dispone de: $<%= current_user.money_balance %></label><br>
+                        <div class="dinero">
+                            <span>$</span>
+                            <input type="number" name="Dinero" id="Dinero" required>
+                        </div>
+                        <br>
+                        <button type="submit" class="transfer-btn">Transferir Dinero</button>
+                    </form>
                 </div>
             </div>
         </div>
