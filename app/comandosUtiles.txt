@@ -4,6 +4,7 @@ Comandos utiles:
 docker compose build (crear docker)
 docker compose up app (levantar aplicacion)
 docker compose up -d app (levantar la aplicacion pero deja seguir escribiendo en la terminal)
+(Archivos a eliminar antes de los siguientes comandos: test.sqlite3, walles_development.sqlite3 y schema.rb)
 docker compose exec app bundle exec rake db:create (levantar base de datos)
 docker compose exec app bundle exec rake db:migrate (levantar migraciones)
 docker compose exec app bundle exec rake db:seed (levantar la semilla)
