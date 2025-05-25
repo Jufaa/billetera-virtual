@@ -8,10 +8,11 @@ class CreateUsers < ActiveRecord::Migration[8.0]
       t.string "email"
       t.string "phone_number"
       t.string "password"
+      t.string "cvu"
+      t.string "alias"
+      t.float "money_balance"
       t.datetime "created_at", null: false
       t.datetime "updated_at", null: false
-
-      t.timestamps
     end
   end
 end

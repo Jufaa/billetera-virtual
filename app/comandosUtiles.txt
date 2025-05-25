@@ -3,12 +3,17 @@ Comandos utiles:
 
 docker compose build (crear docker)
 docker compose up app (levantar aplicacion)
+docker compose up -d app (levantar la aplicacion pero deja seguir escribiendo en la terminal)
+(Archivos a eliminar antes de los siguientes comandos: test.sqlite3, walles_development.sqlite3 y schema.rb)
 docker compose exec app bundle exec rake db:create (levantar base de datos)
 docker compose exec app bundle exec rake db:migrate (levantar migraciones)
+docker compose exec app bundle exec rake db:seed (levantar la semilla)
 docker run --rm -it -v "$PWD/db:/db" nouchka/sqlite3 /db/wallet_development.sqlite3 (usar sqlite3)
 sqlite3 db/wallet_development.sqlite3 (ingresar a la base de datos con sqlite)
 .tables (lista todas las tablas de la bd)
 .schema (lista las tablas con los atributos y sus tipos)
+.schema users (ver solo la tabla users con los atributos y sus tipos)
+SELECT * FROM users; (ver los datos de los usuarios registrados)
 
 ...
 

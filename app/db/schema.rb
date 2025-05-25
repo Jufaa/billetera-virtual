@@ -12,9 +12,6 @@
 
 ActiveRecord::Schema[8.0].define(version: 2025_05_16_133131) do
   create_table "accounts", force: :cascade do |t|
-    t.string "account_number"
-    t.string "cbu"
-    t.string "alias"
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -74,6 +71,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_16_133131) do
     t.string "email"
     t.string "phone_number"
     t.string "password"
+    t.string "cvu"
+    t.string "alias"
+    t.float "money_balance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

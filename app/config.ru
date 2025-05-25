@@ -3,8 +3,14 @@ require './controllers/login_controller'
 require './controllers/register_controller'
 require './controllers/main_menu_controller'
 require './controllers/my_profile_controller'
+require './controllers/transfer_controller'
+require './controllers/transfer_failed_controller'
+require './controllers/transfer_success_controller'
 use LoginController
 use RegisterController
 use MainMenuController
 use MyProfileController
+use TransferController
+use TransferSuccessController
+use TransferFailedController
 run App
