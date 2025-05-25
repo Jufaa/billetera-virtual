@@ -3,9 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Transferencia Fallida</title>
+    <link rel="stylesheet" href="/css/transfer_failed.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    
 </head>
 <body>
-    <span>mal</span>
+    <div class="container">
+    <h1>
+        <span style="display: block;">Transacción</span>
+        <span style="display: block;">fallida</span>
+    </h1>
+    <br>
+    <button class="transfer-btn" onclick="location.href='/transfer'">Volver a intentar</button>
+    <button class="menu-btn" onclick="location.href='/main_menu'">Volver al menu</button>
+    </div>
+    <img src="/media/icon-fail.png" alt="Fail" class="icon">
+    <img src="/media/mascota-ref.png" alt="Mascota" class="mascota">
 </body>
 </html>

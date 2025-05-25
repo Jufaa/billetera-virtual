@@ -8,7 +8,7 @@ require './controllers/login_controller' #para usar los controllers
 require './controllers/register_controller' #para usar los controllers
 require './controllers/main_menu_controller' #para usar los controllers
 require './controllers/my_profile_controller'
-require './controllers/transfer_controller'
+require_relative './controllers/transfer_controller'
 require './controllers/transfer_failed_controller'
 require './controllers/transfer_success_controller'
 

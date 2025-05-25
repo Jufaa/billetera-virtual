@@ -1,0 +1,33 @@
+    body{
+        background-color: #95D477;
+        font-family: 'Nunito', sans-serif;  
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .mascota{
+        height: 553px;
+        width: 617px;
+    }
+    .icon{
+        height: 131px;
+        width: 159px;
+    }
+    .transfer-btn{
+        height: 48px;
+        width: 300px;
+        border-radius: 10px;
+        background-color: #1e1e1e;
+        color: white;
+        border:none;        
+    }
+    
+    h1 {
+        text-align: center;
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+    .container {
+        text-align: center;
+        max-width: 600px;
+    }
