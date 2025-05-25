@@ -16,7 +16,7 @@ class LoginController < ApplicationController
     session[:user_id] = @user.id
     redirect to('/main_menu')
   else
-    @error_message = "Usuario o contraseña incorrectos, email: #{params[:email]}, password: #{params[:password]}"
+    @error_message = "Usuario o contraseña incorrectos"
     erb :login
   end
 end
