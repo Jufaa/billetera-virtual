@@ -1,5 +1,2 @@
-schema.rb
-test.sqlite3
-wallet_development.sqlite3
-wallet_development.sqlite3-shm
-wallet_development.sqlite3-wal
+/db/*.sqlite3
+/db/*.sqlite3-*
