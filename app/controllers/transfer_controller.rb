@@ -11,24 +11,24 @@ class TransferController < ApplicationController
 
   post '/transfer' do
     target_account = Account.find_by(account_alias: params[:account_alias]) || Account.find_by(cvu: params[:cvu])
-    origin_account = current_account
-    origin_balance = params[:balance].to_f
+    transfer_account = current_account
+    transfer_balance = params[:Dinero].to_i
 
     if target_account.nil?
       redirect '/transfer_failed'
     end
 
-    if target_account.id == origin_account.id
+    if target_account.id == transfer_account.id
       redirect '/transfer_failed'
     end
 
-    if origin_balance <= 0 || origin_balance > origin_account.money_balance
+    if transfer_balance <= 0 || transfer_balance > transfer_account.balance
       redirect '/transfer_failed'
     else
-      origin_account.balance -= origin_balance
-      target_account.balance += origin_balance
+      transfer_account.balance -= transfer_balance
+      target_account.balance += transfer_balance
       target_account.save
-      origin_account.save
+      transfer_account.save
       redirect '/transfer_success'
     end
   end
