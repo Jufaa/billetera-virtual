@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative '../models/user'
+require_relative '../models/account'
 
 class RegisterController < ApplicationController
   set :views, File.expand_path('../../views', __FILE__) #Para que encuentre al register correctamente cuando centralize con el register_controller
@@ -17,7 +18,7 @@ class RegisterController < ApplicationController
     @user = User.new(
       name: params[:name],
       lastname: params[:lastname],
-      dni: params[:dni],
+      dni: params[:dni],  
       birth_date: params[:birth_date],
       email: params[:email],
       phone_number: params[:phone_number],
@@ -25,12 +26,16 @@ class RegisterController < ApplicationController
     )
 
     if @user.save
-      @user.update(cvu:"000000000000000#{@user.id.to_s.rjust(4, '0')}", alias:"#{@user.name.downcase}.#{@user.lastname.downcase}.rupay",money_balance:"4000")
+      @account = @user.create_account(
+        cvu: "000000000000000#{@user.dni.to_s.rjust(4, '0')}",
+        alias:"#{@user.name.downcase}.#{@user.lastname.downcase}.rupay",
+        balance:"4000"
+      )
       redirect to('/login')
     else
-       puts @user.errors.full_messages
-    @error_message = "Error al registrar usuario"
-    erb :register
+      puts @user.errors.full_messages
+      @error_message = "Error al registrar usuario"
+      erb :register
     end
   end
 end

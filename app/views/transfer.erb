@@ -57,7 +57,7 @@
                         <br>
                         <input type="text" name="alias" id="alias" placeholder="Ingrese el alias o cvu" required>
                         <br>
-                        <label for="Dinero">Cuánto desea transferir? Usted dispone de: $<%= current_user.money_balance %></label><br>
+                        <label for="Dinero">Cuánto desea transferir? Usted dispone de: $<%= current_account.balance %></label><br>
                         <div class="dinero">
                             <span>$</span>
                             <input type="number" name="Dinero" id="Dinero" required>

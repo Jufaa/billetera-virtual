@@ -1,10 +1,15 @@
 users = [
-  {name: 'Ignacio', lastname: 'Cerutti Norris', dni:'44295165',birth_date:'2002-11-18',email:'ignaciocerutti@hotmail.com.ar',phone_number:'45824342', password: 'bokita'},
-  {name: 'Franco', lastname: 'Machuca', dni:'45600311',birth_date:'2003-07-15',email:'franco@hotmail.com.ar',phone_number:'34435436342', password: 'juen'},
-  {name: 'Valentino', lastname: 'Natali', dni:'44345665',birth_date:'2003-05-17',email:'valentino@hotmail.com.ar',phone_number:'4234234409', password: 'sevineeboke'}
+  {name: 'Aphelios', lastname: 'Targon', dni:'45090618',birth_date:'2019-12-11',email:'design@riot.com',phone_number:'3541234', password: 'collector'},
+  {name: 'Sett', lastname: 'Jonia', dni:'45090619',birth_date:'2020-01-14',email:'w@riot.com',phone_number:'36463558', password: 'truedamage'},
+  {name: 'Hwei', lastname: 'Twink', dni:'45090620',birth_date:'2023-12-05',email:'mechanics@riot.com',phone_number:'37134756', password: 'teclas'}
 ]
 users.each do |u|
   user = User.create(u)
   user.save
-  user.update(cvu:"000000000000000#{user.id.to_s.rjust(4, '0')}", alias:"#{user.name.downcase}.#{user.lastname.downcase}.rupay",money_balance:"4000")
+
+  account = user.create_account(
+    cvu: "000000000000000#{user.id.to_s.rjust(4, '0')}",
+    alias:"#{user.name.downcase}.#{user.lastname.downcase}.rupay",
+    balance:"4000"
+  )
 end

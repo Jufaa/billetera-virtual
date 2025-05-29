@@ -13,6 +13,9 @@
 ActiveRecord::Schema[8.0].define(version: 2025_05_16_133131) do
   create_table "accounts", force: :cascade do |t|
     t.integer "user_id", null: false
+    t.string "cvu"
+    t.string "alias"
+    t.integer "balance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_accounts_on_user_id"
@@ -31,7 +34,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_16_133131) do
     t.index ["account_id"], name: "index_cards_on_account_id"
   end
 
-  create_table "deposite_money", force: :cascade do |t|
+  create_table "deposit_money", force: :cascade do |t|
     t.integer "operation_number"
     t.integer "amount"
     t.date "date_money_deposited"
@@ -71,9 +74,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_16_133131) do
     t.string "email"
     t.string "phone_number"
     t.string "password"
-    t.string "cvu"
-    t.string "alias"
-    t.float "money_balance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

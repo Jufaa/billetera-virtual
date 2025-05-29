@@ -1,5 +1,5 @@
 require_relative 'application_controller'
-require_relative '../models/user'
+require_relative '../models/account'
 require 'sinatra/base'
 
 class TransferController < ApplicationController
@@ -10,25 +10,25 @@ class TransferController < ApplicationController
   end
 
   post '/transfer' do
-    usuario_destino = User.find_by(alias: params[:alias]) || User.find_by(cvu: params[:alias])
-    usuario_original = current_user
-    saldo = params[:Dinero].to_f
+    target_account = Account.find_by(alias: params[:alias]) || Account.find_by(cvu: params[:cvu])
+    origin_account = current_account
+    origin_balance = params[:balance].to_f
 
-    if usuario_destino.nil?
+    if target_account.nil?
       redirect '/transfer_failed'
     end
 
-    if usuario_destino.id == usuario_original.id
+    if target_account.id == origin_account.id
       redirect '/transfer_failed'
     end
 
-    if saldo <= 0 || saldo > usuario_original.money_balance
+    if origin_balance <= 0 || origin_balance > origin_account.money_balance
       redirect '/transfer_failed'
     else
-      usuario_original.money_balance -= saldo
-      usuario_destino.money_balance += saldo
-      usuario_destino.save
-      usuario_original.save
+      origin_account.balance -= origin_balance
+      target_account.balance += origin_balance
+      target_account.save
+      origin_account.save
       redirect '/transfer_success'
     end
   end
