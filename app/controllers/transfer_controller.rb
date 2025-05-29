@@ -10,7 +10,7 @@ class TransferController < ApplicationController
   end
 
   post '/transfer' do
-    target_account = Account.find_by(alias: params[:alias]) || Account.find_by(cvu: params[:cvu])
+    target_account = Account.find_by(account_alias: params[:account_alias]) || Account.find_by(cvu: params[:cvu])
     origin_account = current_account
     origin_balance = params[:balance].to_f
 

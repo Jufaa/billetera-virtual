@@ -10,12 +10,11 @@ class LoginController < ApplicationController
   end
 
   post '/login' do
-  @user = User.find_by(email: params[:email], password: params[:password])
-
-  if @user
+  @user = User.find_by(email: params[:email])
+  if @user && @user.authenticate(params[:password])
     session[:user_id] = @user.id
     redirect to('/main_menu')
-  else
+  else 
     @error_message = "Usuario o contraseña incorrectos"
     erb :login
   end

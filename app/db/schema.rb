@@ -14,7 +14,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_16_133131) do
   create_table "accounts", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "cvu"
-    t.string "alias"
+    t.string "account_alias"
     t.integer "balance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

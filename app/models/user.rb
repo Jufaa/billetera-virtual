@@ -1,10 +1,31 @@
-class User < ActiveRecord::Base
-    has_one :account
-    has_many :pet
-    has_many :card, through: :account
+require 'bcrypt'
 
-    validates :email, presence: true, uniqueness: true
-    validates :password, presence: true
-    validates :name, :lastname, :dni, :birth_date, :phone_number, presence: true
-    #TODO: relación amigos
+class User < ActiveRecord::Base
+  include BCrypt
+  # attr_accessor  crea un atributo para la contraseña en default 
+  # permite asignar y leer la contraseña temp sin guardarla en la bd
+  attr_accessor :password
+  
+  validates :password, presence: true, on: :create
+  validates :email, presence: true, uniqueness: true
+  validates :name, :lastname, :dni, :birth_date, :phone_number, presence: true
+  
+  has_one :account
+  has_many :pet
+  has_many :card, through: :account
+  
+  def password
+    @password ||= Password.new(self[:password]) if self[:password].present?
+  end
+  
+  # encripta la pw antes de guardala
+  def password=(new_password)
+    @password = Password.create(new_password)
+    self[:password] = @password
+  end
+  # checkea si la pw es correcta 
+  def authenticate(submitted_password)
+    password == submitted_password
+  end
+
 end

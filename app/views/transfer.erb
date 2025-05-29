@@ -53,9 +53,9 @@
                 <h2>Transferir a una cuenta</h2>
                 <div class="action-buttons">
                     <form action="/transfer" method="post">
-                        <label for="alias">Ingrese el alias o cvu</label>
+                        <label for="account_alias">Ingrese el alias o cvu</label>
                         <br>
-                        <input type="text" name="alias" id="alias" placeholder="Ingrese el alias o cvu" required>
+                        <input type="text" name="account_alias" id="account_alias" placeholder="Ingrese el alias o cvu" required>
                         <br>
                         <label for="Dinero">Cuánto desea transferir? Usted dispone de: $<%= current_account.balance %></label><br>
                         <div class="dinero">

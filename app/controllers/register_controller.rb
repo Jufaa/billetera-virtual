@@ -28,7 +28,7 @@ class RegisterController < ApplicationController
     if @user.save
       @account = @user.create_account(
         cvu: "000000000000000#{@user.dni.to_s.rjust(4, '0')}",
-        alias:"#{@user.name.downcase}.#{@user.lastname.downcase}.rupay",
+        account_alias:"#{@user.name.downcase}.#{@user.lastname.downcase}.rupay",
         balance:"4000"
       )
       redirect to('/login')
