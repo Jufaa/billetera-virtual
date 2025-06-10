@@ -1,0 +1,45 @@
+.hub-top {
+    margin-top: 2%;
+    margin-left: 20%;
+    margin-bottom: 2%;
+    height: 230px;
+    width: 130%;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    flex-direction: column; 
+}
+
+.name{
+    display: flex;   
+    align-items: flex-start;    
+    text-align: left;   
+}
+
+.contenido{
+    display: flex;
+    margin-left: 10px;
+}
+
+.rightdata{
+    justify-content: center;
+}
+.leftdata{
+    margin-right: 200px;
+    
+}
+
+.change-button {
+  display: flex;
+  align-items: flex-start;  
+  margin-top: 25px;
+  margin-left: 10px;
+ 
+}
+
+.texto{
+    margin-left: 10px;
+}

@@ -8,9 +8,11 @@ require './controllers/login_controller' #para usar los controllers
 require './controllers/register_controller' #para usar los controllers
 require './controllers/main_menu_controller' #para usar los controllers
 require './controllers/my_profile_controller'
+require './controllers/change_user_data_controller'
 require_relative './controllers/transfer_controller'
 require './controllers/transfer_failed_controller'
 require './controllers/transfer_success_controller'
+
 
 class App < Sinatra::Application
   set :root, File.dirname(__FILE__)
@@ -38,6 +40,7 @@ class App < Sinatra::Application
   use TransferController
   use TransferSuccessController
   use TransferFailedController
+  use ChangeUserDataController
 
   get '/' do
     redirect '/login'

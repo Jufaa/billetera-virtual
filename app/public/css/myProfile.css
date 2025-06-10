@@ -3,7 +3,7 @@
     margin-left: 20%;
     margin-bottom: 2%;
     height: 100px;
-    width: 300%;
+    width: 200%;
     padding: 10px;
     display: flex;
     justify-content: flex-start;
@@ -68,7 +68,7 @@
     background-color: white;
     border-radius: 10px;  
     height: 300px;
-    width: 300%;
+    width: 200%;
     flex-direction: column;  
 }
 
