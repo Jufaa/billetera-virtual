@@ -1,0 +1,15 @@
+.hub-topA {
+    margin-top: 3%;
+    margin-left: 20%;
+    margin-bottom: 3%;
+    height: 200px;
+    width: 110%;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    flex-direction: column; 
+}
+

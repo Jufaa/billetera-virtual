@@ -7,6 +7,7 @@ require './controllers/change_user_data_controller'
 require './controllers/transfer_controller'
 require './controllers/transfer_failed_controller'
 require './controllers/transfer_success_controller'
+require './controllers/change_account_data_controller'
 
 use LoginController
 use RegisterController
@@ -16,4 +17,5 @@ use TransferController
 use TransferSuccessController
 use TransferFailedController
 use ChangeUserDataController
+use ChangeAccountDataController
 run App

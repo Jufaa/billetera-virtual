@@ -1,45 +1,77 @@
 .hub-top {
-    margin-top: 2%;
+    margin-top: 3%;
     margin-left: 20%;
     margin-bottom: 2%;
-    height: 230px;
-    width: 130%;
+    width: 150%; /* Asegura que todos los bloques tengan el mismo ancho */
     padding: 10px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     background-color: white;
     border-radius: 10px;
     position: relative;
-    flex-direction: column; 
+    flex-direction: column;
 }
 
-.name{
-    display: flex;   
-    align-items: flex-start;    
-    text-align: left;   
-}
-
-.contenido{
+.contenido {
     display: flex;
-    margin-left: 10px;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
 }
 
-.rightdata{
-    justify-content: center;
-}
-.leftdata{
-    margin-right: 200px;
-    
+.leftdata, .rightdata {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
 }
 
-.change-button {
-  display: flex;
-  align-items: flex-start;  
-  margin-top: 25px;
-  margin-left: 10px;
- 
+.leftdata {
+    margin-right: 0;
 }
 
-.texto{
-    margin-left: 10px;
+.name {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.data {
+    margin-top: 10px;
+}
+
+.rightdata .data,
+.rightdata .name,
+.rightdata .change-button {
+    width: 100%;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.change-btn {
+    background-color: #505045;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+    height: 37px;
+    margin-top: 20px;
+}
+
+.texto {
+    margin-left: 21%;
+}
+
+.links {
+    margin-left: 21%;
+}
+
+.link_profile {
+    text-decoration: none;
+    color: #968F4B;
 }

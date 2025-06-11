@@ -12,6 +12,7 @@ require './controllers/change_user_data_controller'
 require_relative './controllers/transfer_controller'
 require './controllers/transfer_failed_controller'
 require './controllers/transfer_success_controller'
+require './controllers/change_account_data_controller'
 
 
 class App < Sinatra::Application
@@ -41,6 +42,7 @@ class App < Sinatra::Application
   use TransferSuccessController
   use TransferFailedController
   use ChangeUserDataController
+  use ChangeAccountDataController
 
   get '/' do
     redirect '/login'

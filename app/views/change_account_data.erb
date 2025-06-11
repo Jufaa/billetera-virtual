@@ -6,6 +6,7 @@
     <title>Rupay</title>
     <link rel="stylesheet" type="text/css" href="/css/mainMenu.css">
     <link rel="stylesheet" type="text/css" href="/css/myProfile.css">
+    <link rel="stylesheet" type="text/css" href="/css/changeUserData.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -50,58 +51,39 @@
             </table>
         </div>
         <div class ="main-right">
-            <div class="hub-head">
-                <div class="hub-pic">
-                <button class="hub-b">
-                    <img src="/media/profile.png" alt="picB">
-                </button>
+          <div class="links">
+              <a class="link_profile" href="http://localhost:8000/my_profile">Tu perfil</a>
+              <span class="label"> > </span>
+              <span class="label">Datos de la Cuenta</span>
+          </div>
+          <div class ="texto">
+              <h2>Datos de la Cuenta</h2>
+          </div>
+          <div class="hub-top">
+            <div class="contenido">
+              <div class="leftdata">
+                <div class="name">
+                  <span class="textH">Alias</span>
                 </div>
-                <div class="text-head">
-                    <div class="name">
-                        <span class="textH"><%= current_user.name%></span>
-                        <span class="textH"><%= current_user.lastname%></span>
-                    </div>
-                <span class="textH1"><%= current_user.email%></span>
+                <div class="data">
+                <span class="textH1"><%= current_account.account_alias%></span>
                 </div>
+              </div>
+              <div class="rightdata">
+                <form action="/change_alias" method="post">
+                  <div class="name">
+                    <label for="account_alias">Cambiar Alias</label>
+                  </div>
+                  <div class="data">
+                    <input type="text" name="account_alias" id="account_alias" placeholder="Ingrese el nuevo Alias" required>
+                  </div>
+                  <div class="change-button">
+                    <button class="change-btn">Modificar</button>
+                  </div>
+                </form>
+              </div>
             </div>
-            <div class="hub-body">
-                <div class="user-data">
-                    <div class="data-pic">
-                        <img src="/media/user.png" alt="dataP">
-                    </div>
-                    <div class="user-text">
-                        <p><strong>Usuario </strong></p>
-                        <p>Informacion de tu usuario</p>
-                    </div>
-                    <button class="buttonP" onclick="location.href='/change_user_data'">
-                        <p> > </p>
-                    </button>
-                </div>
-                <div class="account-data">
-                    <div class="account-pic">
-                        <img src="/media/profile.png" alt="accountP">
-                    </div>
-                    <div class="account-text">
-                        <p> <strong>Cuenta </strong></p>
-                        <p>Informacion de tu cuenta de Rupay</p>
-                    </div>
-                    <button class="buttonP" onclick="location.href='/change_account_data'">
-                        <p> > </p>
-                    </button>
-                </div>
-                <div class="cards">
-                    <div class="card-pic">
-                        <img src="/media/cards.png" alt="cardP">
-                    </div>
-                    <div class="cards-text">
-                        <p> <strong>Tarjetas </strong></p>
-                        <p>Tarjetas asociadas en tu cuenta</p>
-                    </div>
-                    <button class="buttonP">
-                        <p> > </p>
-                    </button>
-                </div>
-            </div>
+          </div>
         </div>
   </div>
 </body>

@@ -51,34 +51,138 @@
             </table>
         </div>
         <div class ="main-right">
+          <div class="links">
+              <a class="link_profile" href="http://localhost:8000/my_profile">Tu perfil</a>
+              <span class="label"> > </span>
+              <span class="label">Datos Personales</span>
+          </div>
+          <div class ="texto">
+              <h2>Datos Personales</h2>
+          </div>
           <div class="hub-top">
-            <div class ="texto">
-              <h2>Datos personales</h2>
-            </div>
             <div class="contenido">
               <div class="leftdata">
                 <div class="name">
-                  <span class="textH">Nombre y apellido</span>
+                  <span class="textH">Nombre</span>
                 </div>
                 <div class="data">
                 <span class="textH1"><%= current_user.name%></span>
+                </div>
+              </div>
+              <div class="rightdata">
+                <form action="/change_name" method="post">
+                  <div class="name">
+                    <label for="account_alias">Cambiar Nombre</label>
+                  </div>
+                  <div class="data">
+                    <input type="text" name="account_alias" id="account_alias" placeholder="Ingrese el nuevo Nombre" required>
+                  </div>
+                  <div class="change-button">
+                    <button class="change-btn">Modificar</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="hub-top">
+            <div class="contenido">
+              <div class="leftdata">
+                <div class="name">
+                  <span class="textH">Apellido</span>
+                </div>
+                <div class="data">
                 <span class="textH1"><%= current_user.lastname%></span>
                 </div>
               </div>
               <div class="rightdata">
+                <form action="/change_lastname" method="post">
+                  <div class="name">
+                    <label for="account_alias">Cambiar Apellido</label>
+                  </div>
+                  <div class="data">
+                    <input type="text" name="account_alias" id="account_alias" placeholder="Ingrese el nuevo Apellido" required>
+                  </div>
+                  <div class="change-button">
+                    <button class="change-btn">Modificar</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="hub-top">
+            <div class="contenido">
+              <div class="leftdata">
                 <div class="name">
                   <span class="textH">Dni</span>
                 </div>
                 <div class="data">
-                  <span class="textH1"><%= current_user.dni%></span>
+                <span class="textH1"><%= current_user.dni%></span>
                 </div>
               </div>
+              <div class="rightdata">
+                <form action="/change_dni" method="post">
+                  <div class="name">
+                    <label for="account_alias">Cambiar Dni</label>
+                  </div>
+                  <div class="data">
+                    <input type="text" name="account_alias" id="account_alias" placeholder="Ingrese el nuevo Dni" required>
+                  </div>
+                  <div class="change-button">
+                    <button class="change-btn">Modificar</button>
+                  </div>
+                </form>
+              </div>
             </div>
-            <div class="change-button">
-                    <button class="deposit-btn">Modificar</button>
+          </div>
+          <div class="hub-top">
+            <div class="contenido">
+              <div class="leftdata">
+                <div class="name">
+                  <span class="textH">Email</span>
                 </div>
+                <div class="data">
+                <span class="textH1"><%= current_user.email%></span>
+                </div>
+              </div>
+              <div class="rightdata">
+                <form action="/change_email" method="post">
+                  <div class="name">
+                    <label for="account_alias">Cambiar Email</label>
+                  </div>
+                  <div class="data">
+                    <input type="text" name="account_alias" id="account_alias" placeholder="Ingrese el nuevo Email" required>
+                  </div>
+                  <div class="change-button">
+                    <button class="change-btn">Modificar</button>
+                  </div>
+                </form>
+              </div>
             </div>
-          <div class="hub-bot">
+          </div>
+          <div class="hub-top">
+            <div class="contenido">
+              <div class="leftdata">
+                <div class="name">
+                  <span class="textH">Numero de Telefono</span>
+                </div>
+                <div class="data">
+                <span class="textH1"><%= current_user.phone_number%></span>
+                </div>
+              </div>
+              <div class="rightdata">
+                <form action="/change_phone" method="post">
+                  <div class="name">
+                    <label for="account_alias">Cambiar Numero de Telefono</label>
+                  </div>
+                  <div class="data">
+                    <input type="text" name="account_alias" id="account_alias" placeholder="Ingrese el nuevo Numero de Telefono" required>
+                  </div>
+                  <div class="change-button">
+                    <button class="change-btn">Modificar</button>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
   </div>
