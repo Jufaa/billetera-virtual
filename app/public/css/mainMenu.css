@@ -88,6 +88,14 @@ body {
     box-sizing: border-box;
 }
 
+.logoutB{
+    height: 20px;
+    color: #505045;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
 .helpB:hover {
     background-color: #1e1e1e;
 }
