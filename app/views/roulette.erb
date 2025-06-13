@@ -1,63 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ruleta</title>
-  <link rel="stylesheet" type="text/css" href="/css/roulette.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <title>Ruleta Giratoria Limpia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/roulette.css">
+
 </head>
 <body>
-  <input type="hidden" name="premio_id" id="premio_id_input">
-  <div class="compsoul-body">
-    <label type="submit" class="compsoul-roulette-button" id="compsoul-roullete-checkbox" for="compsoul-roulette-checkbox">Strat</label>
-    <div class="compsoul-roulette">
-        <ul class="roulette-list">
-        <li class="roulette-item" data-premio-id="1">Premio 1</li>
-        <li class="roulette-item" data-premio-id="2">Premio 2</li>
-        <li class="roulette-item" data-premio-id="3">Premio 3</li>
-        <li class="roulette-item" data-premio-id="4">Premio 4</li>
-        <li class="roulette-item" data-premio-id="5">Premio 5</li>
-        <li class="roulette-item" data-premio-id="6">Premio 6</li>
-        <li class="roulette-item" data-premio-id="0">NADA</li>
-        <li class="roulette-item" data-premio-id="7">Premio 7</li>
-        <li class="roulette-item" data-premio-id="8">Premio 8</li>
-        <li class="roulette-item" data-premio-id="9">Premio 9</li>
-        <li class="roulette-item" data-premio-id="10">Premio 10</li>
-        </ul>
-    </div>  
-</div>
+  <div class="roulette-container">
+    <div class="wheel-wrapper">
+      <div class="pointer"></div>
+      <div class="wheel" id="wheel">
+        <div class="label" style="transform: rotate(0deg) translate(160px) rotate(-0deg)">PREMIO 1</div>
+        <div class="label" style="transform: rotate(36deg) translate(160px) rotate(-36deg)">PREMIO 2</div>
+        <div class="label" style="transform: rotate(72deg) translate(160px) rotate(-72deg)">PREMIO 3</div>
+        <div class="label" style="transform: rotate(108deg) translate(160px) rotate(-108deg)">PREMIO 4</div>
+        <div class="label" style="transform: rotate(144deg) translate(160px) rotate(-144deg)">PREMIO 5</div>
+        <div class="label" style="transform: rotate(180deg) translate(160px) rotate(-180deg)">PREMIO 6</div>
+        <div class="label" style="transform: rotate(216deg) translate(160px) rotate(-216deg)">PREMIO 7</div>
+        <div class="label" style="transform: rotate(252deg) translate(160px) rotate(-252deg)">PREMIO 8</div>
+        <div class="label" style="transform: rotate(288deg) translate(160px) rotate(-288deg)">PREMIO 9</div>
+        <div class="label" style="transform: rotate(324deg) translate(160px) rotate(-324deg)">PREMIO 10</div>
+      </div>
+    </div>
 
-    <!-- Formulario que se envía al backend -->
-     <form id="roulette-form" action="/roulette" method="POST">
-     <label type="submit" class="compsoul-roulette-button" id="compsoul-roullete-checkbox" for="compsoul-roulette-checkbox">
-     <input type="hidden" name="premio_id" id="premio_id_input">
-     <button type="submit" class="start-button">Start</button>
-    </label>
-     </form>
-
-
-    <!-- Mensaje de error si no hay saldo suficiente -->
-    <% if @error_message %>
-      <div class="error-message"><%= @error_message %></div>
-    <% end %>
+    <form id="roulette-form" action="/roulette" method="POST">
+      <input type="hidden" name="premio_id" id="premio_id_input">
+      <button type="button" class="start-button">Girar</button>
+    </form>
   </div>
+
+  <script>
+    const startButton = document.querySelector('.start-button');
+    const wheel = document.getElementById('wheel');
+    const totalItems = 10;
+
+    startButton.addEventListener('click', () => {
+      const selectedIndex = Math.floor(Math.random() * totalItems);
+      const degreesPerItem = 360 / totalItems;
+      const stopAngle = selectedIndex * degreesPerItem;
+      const extraSpins = 360 * (5 + Math.floor(Math.random() * 3));
+      const totalRotation = extraSpins + stopAngle;
+
+      wheel.style.transition = 'transform 4s cubic-bezier(0.33, 1, 0.68, 1)';
+      wheel.style.transform = `rotate(-${totalRotation}deg)`;
+
+      setTimeout(() => {
+        document.getElementById('premio_id_input').value = selectedIndex;
+        document.getElementById('roulette-form').submit();
+      }, 4000);
+    });
+  </script>
 </body>
-<script>
-  document.querySelector('.start-button').addEventListener('click', function(event) {
-    event.preventDefault();
-
-    const items = document.querySelectorAll('.roulette-item');
-    const randomIndex = Math.floor(Math.random() * items.length);
-    const selectedItem = items[randomIndex];
-    const premioId = selectedItem.dataset.premioId;
-
-
-    // Cargar y enviar el premio al backend
-    document.getElementById('premio_id_input').value = premioId;
-    document.getElementById('roulette-form').submit();
-  });
-</script>
 </html>
