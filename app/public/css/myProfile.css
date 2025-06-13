@@ -38,6 +38,10 @@
     margin-top: 10px; 
 }
 
+label{
+    font-size: 14px;
+}
+
 .textH1{
     font-size: 17px;
     font-weight: bold;

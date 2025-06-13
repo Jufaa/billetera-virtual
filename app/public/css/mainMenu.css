@@ -101,14 +101,18 @@ body {
 }
 
 .balance-section {
-    position: fixed;
-    top: 15%;
-    left: 15%;
-    width: 55%;
-    height: auto;
-    background-color: #FFFFFF;
-    padding-top: 1%;
+    margin-top: 2%;
+    margin-left: 29%;
+    margin-bottom: 2%;
+    height: 250px;
+    width: 210%;
+    padding: 10px;
     display: flex;
+    justify-content: flex-start;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    flex-direction: column;
 }
 
 .balance-section h2 {
@@ -116,23 +120,29 @@ body {
     font-weight: bold;
     color: #505045;
     align-content: left;
-    margin-left: 5%;
-    margin-top: 0%;
 }
+
 .balance{
     font-size: 150%;
     font-weight: bold;
     color: #505045;
-    margin-left: 0%;
-    margin-top: 10%;
+    margin-left: 20px;
+    margin-top: 2px;
     margin-right: 20%; 
 }
 
 .action-buttons {
   display: flex;
   justify-content: center;
-  gap: 10%;
-  margin-top: 20%;
+  gap: 20%;
+  margin-top: 1%;   
+}
+
+
+.titleB{
+    font-size: 175%;
+    font-weight: bold;
+    margin-left: 20px;
 }
 
 .deposit-btn{
