@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ruleta Giratoria Limpia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/roulette.css">
+
+</head>
+<body>
+  <div class="roulette-container">
+    <div class="wheel-wrapper">
+      <div class="pointer"></div>
+      <div class="wheel" id="wheel">
+        <div class="label" style="transform: rotate(0deg) translate(160px) rotate(-0deg)">PREMIO 1</div>
+        <div class="label" style="transform: rotate(36deg) translate(160px) rotate(-36deg)">PREMIO 2</div>
+        <div class="label" style="transform: rotate(72deg) translate(160px) rotate(-72deg)">PREMIO 3</div>
+        <div class="label" style="transform: rotate(108deg) translate(160px) rotate(-108deg)">PREMIO 4</div>
+        <div class="label" style="transform: rotate(144deg) translate(160px) rotate(-144deg)">PREMIO 5</div>
+        <div class="label" style="transform: rotate(180deg) translate(160px) rotate(-180deg)">PREMIO 6</div>
+        <div class="label" style="transform: rotate(216deg) translate(160px) rotate(-216deg)">PREMIO 7</div>
+        <div class="label" style="transform: rotate(252deg) translate(160px) rotate(-252deg)">PREMIO 8</div>
+        <div class="label" style="transform: rotate(288deg) translate(160px) rotate(-288deg)">PREMIO 9</div>
+        <div class="label" style="transform: rotate(324deg) translate(160px) rotate(-324deg)">PREMIO 10</div>
+      </div>
+    </div>
+
+    <form id="roulette-form" action="/roulette" method="POST">
+      <input type="hidden" name="premio_id" id="premio_id_input">
+      <button type="button" class="start-button">Girar</button>
+    </form>
+  </div>
+
+  <script>
+    const startButton = document.querySelector('.start-button');
+    const wheel = document.getElementById('wheel');
+    const totalItems = 10;
+
+    startButton.addEventListener('click', () => {
+      const selectedIndex = Math.floor(Math.random() * totalItems);
+      const degreesPerItem = 360 / totalItems;
+      const stopAngle = selectedIndex * degreesPerItem;
+      const extraSpins = 360 * (5 + Math.floor(Math.random() * 3));
+      const totalRotation = extraSpins + stopAngle;
+
+      wheel.style.transition = 'transform 4s cubic-bezier(0.33, 1, 0.68, 1)';
+      wheel.style.transform = `rotate(-${totalRotation}deg)`;
+
+      setTimeout(() => {
+        document.getElementById('premio_id_input').value = selectedIndex;
+        document.getElementById('roulette-form').submit();
+      }, 4000);
+    });
+  </script>
+</body>
+</html>
