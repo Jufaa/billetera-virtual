@@ -36,8 +36,8 @@ class MarketController < ApplicationController
 
     if account.credits >= price
       account.update(credits: account.credits - price)
-      Pet.create(user_id: current_user.id, pet_number: pet_number)
-      redirect '/market'
+      Pet.update(user_id: current_user.id, pet_number: pet_number)
+      erb :market
     else
       @error = "No tenés créditos suficientes para comprar esta mascota."
       @owned_pet_numbers = Pet.where(user_id: current_user.id).pluck(:pet_number)
