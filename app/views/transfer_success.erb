@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transferencia Fallida</title>
+    <title>Transferencia Existosa</title>
     <link rel="stylesheet" href="/css/transfer_success.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +20,6 @@
     <button class="transfer-btn" onclick="location.href='/main_menu'">Descargar comprobante y volver al menu</button>
     </div>
     <img src="/media/icon-success.png" alt="Success" class="icon">
-    <img src="/media/mascota-ref2.png" alt="Mascota" class="mascota">
+    <img src="/media/mascota-<%= current_account.user.pet.pet_number %>-happy.png" alt="Mascota" class="mascota">
 </body>
 </html>
