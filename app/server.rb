@@ -13,7 +13,7 @@ require_relative './controllers/transfer_controller'
 require './controllers/transfer_failed_controller'
 require './controllers/transfer_success_controller'
 require './controllers/change_account_data_controller'
-
+require './controllers/roulette_controller'
 
 class App < Sinatra::Application
   set :root, File.dirname(__FILE__)
@@ -43,6 +43,7 @@ class App < Sinatra::Application
   use TransferFailedController
   use ChangeUserDataController
   use ChangeAccountDataController
+  use RouletteController
 
   get '/' do
     redirect '/login'
