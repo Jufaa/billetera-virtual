@@ -15,6 +15,7 @@ require './controllers/transfer_success_controller'
 require './controllers/change_account_data_controller'
 require './controllers/market_controller'
 require './controllers/not_yet_controller'
+require './controllers/pets_controller'
 
 class App < Sinatra::Application
   set :root, File.dirname(__FILE__)
@@ -46,6 +47,7 @@ class App < Sinatra::Application
   use ChangeAccountDataController
   use MarketController
   use NotYetController
+  use PetsController
 
   get '/' do
     redirect '/login'

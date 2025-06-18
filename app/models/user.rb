@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   validates :name, :lastname, :dni, :birth_date, :phone_number, presence: true
   
   has_one :account
-  has_one :pet
+  has_many :pet
   has_many :card, through: :account
   
   def password

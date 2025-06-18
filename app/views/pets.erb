@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mercado</title>
-    <link rel="stylesheet" type="text/css" href="/css/market.css">
+    <link rel="stylesheet" type="text/css" href="/css/pets.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -56,8 +56,7 @@
         </div>
         <div class ="main-right">
             <div class="balance-section">
-                <p class ="titleB"> Tus creditos: </p>
-                <p class="balance">$<%= current_account.credits %></p>
+                <p class ="titleB"> Selecciona tu mascota: </p>
                 <table class="pet-table">
                     <tr>
                         <% pets = [
@@ -72,11 +71,11 @@
                             <img src="<%= pet[:img] %>" alt="pet-<%= pet[:number] %>">
                             <p>$<%= pet[:price] %></p>
                             <% if @owned_pet_numbers.include?(pet[:number]) %>
-                                <button class="buy-btn" disabled style="background-color: grey; cursor: not-allowed;">Comprada</button>
+                                <button class="buy-btn" disabled style="background-color: grey; cursor: not-allowed;">Seleccionada</button>
                             <% else %>
                                 <form action="/market" method="post">
                                     <input type="hidden" name="pet_number" value="<%= pet[:number] %>">
-                                    <button type="submit" class="buy-btn">Comprar</button>
+                                    <button type="submit" class="buy-btn">Seleccionar</button>
                                 </form>
                             <% end %>
                         </td>

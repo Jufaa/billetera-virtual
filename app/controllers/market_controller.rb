@@ -1,4 +1,5 @@
 require_relative 'application_controller'
+require_relative '../models/user'
 require_relative '../models/account'
 require_relative '../models/pet'
 
@@ -37,6 +38,7 @@ class MarketController < ApplicationController
     if account.credits >= price
       account.update(credits: account.credits - price)
       Pet.update(user_id: current_user.id, pet_number: pet_number)
+      @owned_pet_numbers = Pet.where(user_id: current_user.id).pluck(:pet_number)
       erb :market
     else
       @error = "No tenés créditos suficientes para comprar esta mascota."
