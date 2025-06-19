@@ -1,3 +1,3 @@
-class Transfer < Operations
-  #TODO: agg cbu etc
+class Transfer < ActiveRecord::Base
+    belongs_to :user
 end
