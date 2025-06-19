@@ -9,9 +9,31 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-left : 180%;
+  margin-left : 170%;
   margin-top: 16%;
 }
+
+.coins-data{
+    margin-left: 250%;
+    width: 100px; /* Asegura que todos los bloques tengan el mismo ancho */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    flex-direction: column;
+    margin-bottom: 90%;
+}
+
+.coins-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left :170%;
+}
+
+
 
 .ruleta-wrapper {
   position: relative;

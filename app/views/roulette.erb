@@ -6,6 +6,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/roulette.css">
   <link rel="stylesheet" href="/css/mainMenu.css">
+  <link rel="stylesheet" href="/css/changeUserData.css">
 </head>
 <body>
   <div class="barra">
@@ -84,28 +85,34 @@
           <% end %>
         </div>
       </div>
+      <div class="coins-data">
+        <div class="coins-conteiner">
+          <p class ="credits"> Tus Monedas: </p>
+          <p class="current-credits">$<%= current_user.credits %></p>
+        </div>
+      </div>
     </div>
     <script>
-    const startButton = document.querySelector('.start-button');
-    const ruleta = document.getElementById('ruleta');
-    const totalItems = 10;
+      const startButton = document.querySelector('.start-button');
+      const ruleta = document.getElementById('ruleta');
+      const totalItems = 10;
 
-    startButton.addEventListener('click', () => {
-      const numeroSeleccionado = Math.floor(Math.random() * totalItems);
-      const gradosPorPremio = 360 / totalItems;
-      const frenoDePremio = numeroSeleccionado * gradosPorPremio;
-      const extraSpins = 360 * (5 + Math.floor(Math.random() * 3));
-      const ajusteCentro = gradosPorPremio / 2;
-      const total = extraSpins + frenoDePremio + ajusteCentro; // para que caiga en el medio, antes caia en el medio de los do
+      startButton.addEventListener('click', () => {
+        const numeroSeleccionado = Math.floor(Math.random() * totalItems);
+        const gradosPorPremio = 360 / totalItems;
+        const frenoDePremio = numeroSeleccionado * gradosPorPremio;
+        const extraSpins = 360 * (5 + Math.floor(Math.random() * 3));
+        const ajusteCentro = gradosPorPremio / 2;
+        const total = extraSpins + frenoDePremio + ajusteCentro; // para que caiga en el medio, antes caia en el medio de los do
 
-      ruleta.style.transition = 'transform 4s';
-      ruleta.style.transform = `rotate(-${total}deg)`;
+        ruleta.style.transition = 'transform 4s';
+        ruleta.style.transform = `rotate(-${total}deg)`;
 
-      setTimeout(() => {
-        document.getElementById('premio_id_input').value = numeroSeleccionado;
-        document.getElementById('roulette-form').submit();
-      }, 4000);
-    });
+        setTimeout(() => {
+          document.getElementById('premio_id_input').value = numeroSeleccionado;
+          document.getElementById('roulette-form').submit();
+        }, 4000);
+      });
     </script>
   </div>
 </body>
