@@ -21,7 +21,7 @@
             <img src="/media/logo.png" alt="Logo Rupay">
         </div>
     </div>
-    
+
   <div class="main-content">
     <div class="main-left">
       <table class="menu-table">
@@ -49,39 +49,38 @@
         </tbody>
       </table>
     </div>
-  <div class="roulette-container">
-    <div class="ruleta-wrapper">
-      <div class="pointer"></div>
-      <div class="ruleta" id="ruleta">
-        <div class="label" style="transform: rotate(0deg) translate(160px) rotate(-0deg)">100 COINS</div>
-        <div class="label" style="transform: rotate(36deg) translate(160px) rotate(-36deg)">50 COINS</div>
-        <div class="label" style="transform: rotate(72deg) translate(160px) rotate(-72deg)">25 COINS</div>
-        <div class="label" style="transform: rotate(108deg) translate(160px) rotate(-108deg)">10 COINS</div>
-        <div class="label" style="transform: rotate(144deg) translate(160px) rotate(-144deg)">NADA</div>
-        <div class="label" style="transform: rotate(180deg) translate(160px) rotate(-180deg)">NADA</div>
-        <div class="label" style="transform: rotate(216deg) translate(160px) rotate(-216deg)">NADA</div>
-        <div class="label" style="transform: rotate(252deg) translate(160px) rotate(-252deg)">NADA</div>
-        <div class="label" style="transform: rotate(288deg) translate(160px) rotate(-288deg)">NADA</div>
-        <div class="label" style="transform: rotate(324deg) translate(160px) rotate(-324deg)">NADA</div>
+    <div class="main-right">
+      <div class ="roulette-container">
+        <div class="ruleta-wrapper">
+          <div class="pointer"></div>
+          <div class="ruleta" id="ruleta">
+            <div class="label" style="transform: rotate(0deg) translate(160px) rotate(-0deg)">100 COINS</div>
+            <div class="label" style="transform: rotate(36deg) translate(160px) rotate(-36deg)">50 COINS</div>
+            <div class="label" style="transform: rotate(72deg) translate(160px) rotate(-72deg)">25 COINS</div>
+            <div class="label" style="transform: rotate(108deg) translate(160px) rotate(-108deg)">10 COINS</div>
+            <div class="label" style="transform: rotate(144deg) translate(160px) rotate(-144deg)">NADA</div>
+            <div class="label" style="transform: rotate(180deg) translate(160px) rotate(-180deg)">NADA</div>
+            <div class="label" style="transform: rotate(216deg) translate(160px) rotate(-216deg)">NADA</div>
+            <div class="label" style="transform: rotate(252deg) translate(160px) rotate(-252deg)">NADA</div>
+            <div class="label" style="transform: rotate(288deg) translate(160px) rotate(-288deg)">NADA</div>
+            <div class="label" style="transform: rotate(324deg) translate(160px) rotate(-324deg)">NADA</div>
+          </div>
+          <form id="roulette-form" action="/roulette" method="POST">
+            <input type="hidden" name="premio_id" id="premio_id_input">
+            <button type="button" class="start-button">Girar por 20 monedas</button>
+          </form>
+          <% unless @first_load %>
+            <% if @error_message %>
+              <div class="alert alert-error"><%= @error_message %></div>
+            <% end %>
+            <% if @message %>
+              <div class="alert alert-success"><%= @message %></div>
+            <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
-
-    <form id="roulette-form" action="/roulette" method="POST">
-      <input type="hidden" name="premio_id" id="premio_id_input">
-      <button type="button" class="start-button">Girar por 20 monedas</button>
-    </form>
-    <% unless @first_load %>
-    <% if @error_message %>
-      <div class="alert alert-error"><%= @error_message %></div>
-    <% end %>
-    <% if @message %>
-      <div class="alert alert-success"><%= @message %></div>
-      <% end %>
-    <% end %>
-  </div>
-
-
-  <script>
+    <script>
     const startButton = document.querySelector('.start-button');
     const ruleta = document.getElementById('ruleta');
     const totalItems = 10;
@@ -101,6 +100,7 @@
         document.getElementById('roulette-form').submit();
       }, 4000);
     });
-  </script>
+    </script>
+  </div>
 </body>
 </html>
