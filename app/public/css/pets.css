@@ -100,11 +100,11 @@ body {
     background-color: #1e1e1e;
 }
 
-.balance-section {
+.pets-section {
     margin-top: 10px;              
     margin-left: 10px;             
     margin-bottom: 20px; 
-    width: 100%;                 
+    width: 80%;                 
     padding: 30px;                 
     background-color: white;
     border-radius: 10px;

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mercado</title>
     <link rel="stylesheet" type="text/css" href="/css/pets.css">
+    <link rel="stylesheet" type="text/css" href="/css/mainMenu.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -55,14 +56,14 @@
             </table>
         </div>
         <div class ="main-right">
-            <div class="balance-section">
+            <div class="pets-section">
                 <p class ="titleB"> Selecciona tu mascota: </p>
                 <table class="pet-table">
                     <tr>
                         <% pets = [
                             { name: 'Cubone', number: 1, price: 400, img: '/media/mascota-1-standar.png' },
                             { name: 'Totodile', number: 2, price: 200, img: '/media/mascota-2-standar.png' },
-                            { name: 'Charmander', number: 3, price: 600, img: '/media/mascota-3-standar.png' }
+                            { name: 'Squirtle', number: 3, price: 600, img: '/media/mascota-3-standar.png' }
                         ] %>
 
                     <% pets.each do |pet| %>
