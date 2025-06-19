@@ -9,7 +9,6 @@
 ![imagen](https://github.com/user-attachments/assets/91b91369-4a10-4b35-aabf-74e59b5808e7)
 ![imagen](https://github.com/user-attachments/assets/afdd6807-07a7-402a-98d5-a8945ba954bc)
 ![imagen](https://github.com/user-attachments/assets/59cf1414-ca00-4a8b-b9c9-76afbf522239)
-![imagen](https://github.com/user-attachments/assets/ccbecc0e-067f-4b26-93d3-f0bd755fa4c7)
 
 
 Link para edición: https://drive.google.com/file/d/10XjVzXCYOb_KORrmrF59MDSFgImeK6V5/view?usp=drive_link
