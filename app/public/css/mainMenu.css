@@ -252,3 +252,39 @@ body {
 .main-left{
     margin-left:1%;
 }
+
+.features-section {
+    margin-top: 20%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30%;
+    justify-items: center;
+    margin-left: 60%;   
+    gap: 30% 70%;
+}
+
+.feature-button {
+    background-color: #D9D1BB;
+    border: none;
+    border-radius: 12px;
+    width: 130px;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #2E2E2E;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.feature-button:hover {
+    background-color: #cfc7ad;
+}
+
+.feature-button img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+}
