@@ -93,10 +93,7 @@ body {
 }
 
 .balance-section {
-    position: fixed;
-    top: 15%;
-    left: 27.5%;
-    width: 60%;
+    width: 100%;
     height: auto;
     background-color: #FFFFFF;
     padding-top: 1%;
@@ -170,7 +167,7 @@ input{
   height: 50px;
   margin-bottom: 10%;
   margin-top: 10%;
-  margin-left: 70%;
+  margin-left: 75%;
 }
 
 .menu-table {
@@ -251,6 +248,8 @@ input{
 }
 
 .main-right{
+    margin-top: 10px;
+    width: 80%;
     margin-left:20px;
 }
 .main-left{
