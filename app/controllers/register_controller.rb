@@ -30,11 +30,12 @@ class RegisterController < ApplicationController
       @account = @user.create_account(
         cvu: "000000000000000#{@user.dni.to_s.rjust(4, '0')}",
         account_alias:"#{@user.name.downcase}.#{@user.lastname.downcase}.rupay",
-        balance:"4000",
-        credits:"1000"
+        balance:"4000"
       )
+      @user.update(credits: 1000)
       pet_number = [1, 2, 3].sample
-      @user.create_pet(pet_number: pet_number)
+      @user.pets.create(pet_number: pet_number)
+      @user.update(main_pet_number: pet_number)
       redirect to('/login')
     else
       puts @user.errors.full_messages

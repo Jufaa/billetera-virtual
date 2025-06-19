@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   validates :name, :lastname, :dni, :birth_date, :phone_number, presence: true
   
   has_one :account
-  has_many :pet
+  has_many :pets
   has_many :card, through: :account
   
   def password
@@ -26,6 +26,10 @@ class User < ActiveRecord::Base
   # checkea si la pw es correcta 
   def authenticate(submitted_password)
     password == submitted_password
+  end
+
+  def main_pet
+    pets.find_by(pet_number: main_pet_number)
   end
 
 end

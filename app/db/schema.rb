@@ -16,7 +16,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_16_133131) do
     t.string "cvu"
     t.string "account_alias"
     t.integer "balance"
-    t.integer "credits"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_accounts_on_user_id"
@@ -74,6 +73,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_16_133131) do
     t.string "email"
     t.string "phone_number"
     t.string "password"
+    t.integer "credits", default: 0
+    t.integer "main_pet_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

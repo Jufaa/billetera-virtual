@@ -5,7 +5,6 @@ class CreateAccounts < ActiveRecord::Migration[8.0]
       t.string :cvu
       t.string :account_alias
       t.integer :balance
-      t.integer :credits
       t.timestamps
      end
   end

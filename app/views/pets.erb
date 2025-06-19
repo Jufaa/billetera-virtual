@@ -69,14 +69,17 @@
                         <td>
                             <p><%= pet[:name] %></p>
                             <img src="<%= pet[:img] %>" alt="pet-<%= pet[:number] %>">
-                            <p>$<%= pet[:price] %></p>
                             <% if @owned_pet_numbers.include?(pet[:number]) %>
-                                <button class="buy-btn" disabled style="background-color: grey; cursor: not-allowed;">Seleccionada</button>
+                                <% if @main_pet_number == pet[:number] %>
+                                    <button class="buy-btn" disabled style="background-color: red;">Principal</button>
+                                <% else %>
+                                    <form action="/pets" method="post">
+                                        <input type="hidden" name="pet_number" value="<%= pet[:number] %>">
+                                        <button type="submit" class="buy-btn">Seleccionar</button>
+                                    </form>
+                                <% end %>
                             <% else %>
-                                <form action="/market" method="post">
-                                    <input type="hidden" name="pet_number" value="<%= pet[:number] %>">
-                                    <button type="submit" class="buy-btn">Seleccionar</button>
-                                </form>
+                                <button class="buy-btn" disabled style="background-color: gray;">No disponible</button>
                             <% end %>
                         </td>
                     <% end %>
