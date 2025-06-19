@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   has_one :account
   has_one :pet
   has_many :card, through: :account
+  has_many :transfer
   
   def password
     @password ||= Password.new(self[:password]) if self[:password].present?

@@ -31,7 +31,7 @@ class TransferController < ApplicationController
       target_account.save
       transfer_account.save
 
-      @transfer = current_account.create_transfer(
+      @transfer = transfer_account.transfers.create(
       amount: transfer_balance,
       destiny_account_cvu: target_account.cvu,
       transfer_date: Time.now,

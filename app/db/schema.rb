@@ -63,7 +63,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_16_133131) do
 
   create_table "transfers", force: :cascade do |t|
     t.integer "amount"
-    t.integer "destiny_account_cvu"
+    t.string "destiny_account_cvu"
     t.date "transfer_date"
     t.integer "account_id", null: false
     t.datetime "created_at", null: false
