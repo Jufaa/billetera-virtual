@@ -45,11 +45,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_16_133131) do
     t.integer "account_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "transfer_number"
-    t.integer "amount"
-    t.date "transfer_date"
-    t.integer "movement_type"
-    t.integer "destiny_account_number"
     t.integer "given_amount"
     t.integer "total_amount"
     t.date "expiration_date"
@@ -63,6 +58,16 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_16_133131) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_pets_on_user_id"
+  end
+
+  create_table "transfers", force: :cascade do |t|
+    t.integer "amount"
+    t.string "destiny_account_cvu"
+    t.date "transfer_date"
+    t.integer "account_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_transfers_on_account_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -83,4 +88,5 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_16_133131) do
   add_foreign_key "cards", "accounts"
   add_foreign_key "operations", "accounts"
   add_foreign_key "pets", "users"
+  add_foreign_key "transfers", "accounts"
 end

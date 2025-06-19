@@ -1,4 +1,3 @@
-
 require 'bundler/setup'
 require 'sinatra/base'
 require 'sinatra/activerecord'
@@ -16,6 +15,7 @@ require './controllers/change_account_data_controller'
 require './controllers/market_controller'
 require './controllers/not_yet_controller'
 require './controllers/pets_controller'
+require './controllers/roulette_controller'
 
 class App < Sinatra::Application
   set :root, File.dirname(__FILE__)
@@ -45,9 +45,7 @@ class App < Sinatra::Application
   use TransferFailedController
   use ChangeUserDataController
   use ChangeAccountDataController
-  use MarketController
-  use NotYetController
-  use PetsController
+  use RouletteController
 
   get '/' do
     redirect '/login'

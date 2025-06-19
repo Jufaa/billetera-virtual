@@ -1,5 +1,6 @@
 require_relative 'application_controller'
 require_relative '../models/account'
+require_relative '../models/transfer'
 require 'sinatra/base'
 
 class TransferController < ApplicationController
@@ -29,6 +30,12 @@ class TransferController < ApplicationController
       target_account.balance += transfer_balance
       target_account.save
       transfer_account.save
+
+      @transfer = transfer_account.transfers.create(
+      amount: transfer_balance,
+      destiny_account_cvu: target_account.cvu,
+      transfer_date: Time.now,
+      )
       redirect '/transfer_success'
     end
   end
