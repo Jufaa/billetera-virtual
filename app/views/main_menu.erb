@@ -89,7 +89,21 @@
                 Compra Dólares
                 </button>
             </div>
-        </div>
+        </div><% if @transfers && @transfers.any? %>
+  <ul>
+    <% @transfers.each do |transfer| %>
+      <li>
+        A: <%= transfer.destiny_account_cvu %> |
+        Monto: $<%= transfer.amount %> |
+        Fecha: <%= transfer.transfer_date.strftime("%d/%m/%Y %H:%M") %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No tenés transferencias aún.</p>
+<% end %>
+
     </div>
 </body>
 </html>
+

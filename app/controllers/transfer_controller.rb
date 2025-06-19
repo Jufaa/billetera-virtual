@@ -4,10 +4,14 @@ require_relative '../models/transfer'
 require 'sinatra/base'
 
 class TransferController < ApplicationController
-  set :views, File.expand_path('../../views', __FILE__)
+  set :views, File.expand_path('../../views', FILE)
 
   get '/transfer' do
     erb :transfer
+  end
+  get '/main_menu' do
+    @transfers = current_account.transfers.order(transfer_date: :desc).to_a
+    erb :main_menu
   end
 
   post '/transfer' do
@@ -40,5 +44,3 @@ class TransferController < ApplicationController
     end
   end
 end
-
-
