@@ -89,24 +89,26 @@
                 Compra Dólares
                 </button>
             </div>
+            </div class ="history-section">
+                <h2 class="titleH">Mis Transferencias</h2>
+                    </div class ="itemsHistory">
+                    <% if @all_transfers && @all_transfers.any? %>
+                    <ul>
+                    <% @all_transfers.each do |transfer| %>
+                    <li>
+                        A: <%= transfer.name + " " +  transfer.lastname %> |
+                        Monto: $<%= transfer.amount %> |
+                        Fecha: <%= transfer.transfer_date.strftime("%d/%m/%Y %H:%M") %>
+                    </li>
+                    <% end %>
+                    </ul>
+                    <% else %>
+                    <p>No tenés transferencias aún.</p>
+                    <% end %>
+                </div>
+            </div>
         </div>
-        </div>
-               <h2>Mis Transferencias</h2>
-
-<% if @all_transfers && @all_transfers.any? %>
-  <ul>
-    <% @all_transfers.each do |transfer| %>
-      <li>
-        A: <%= transfer.destiny_account_cvu %> |
-        Monto: $<%= transfer.amount %> |
-        Fecha: <%= transfer.transfer_date.strftime("%d/%m/%Y %H:%M") %>
-      </li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>No tenés transferencias aún.</p>
-<% end %>
-
+    </div>
 </body>
 </html>
 

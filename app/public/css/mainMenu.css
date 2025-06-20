@@ -102,10 +102,10 @@ body {
 
 .balance-section {
     margin-top: 2%;
-    margin-left: 29%;
+    margin-left: 8%;
     margin-bottom: 2%;
     height: 250px;
-    width: 210%;
+    width: 150%;
     padding: 10px;
     display: flex;
     justify-content: flex-start;
@@ -258,8 +258,8 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
-    margin-left: 29%;   
-    gap: 30% 81%;
+    margin-left: 8%;   
+    gap: 10% 30%;
 }
 
 .feature-button {
@@ -286,4 +286,19 @@ body {
     width: 50px;
     height: 50px;
     margin-bottom: 10px;
+}
+
+.history-section{
+    margin-top: 2%;
+    margin-left: 8%;
+    margin-bottom: 2%;
+    height: 250px;
+    width: 150%;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    flex-direction: column;  
 }
