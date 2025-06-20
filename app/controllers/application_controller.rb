@@ -17,4 +17,7 @@ class ApplicationController < Sinatra::Base
     @all_transfers ||= Transfer.where(account_id: current_account.id)
     end
   end
+  configure :test do
+  disable :protection
+  end
 end
