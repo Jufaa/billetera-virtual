@@ -55,43 +55,45 @@
             </table>
         </div>
         <div class ="main-right">
-            <div class="balance-section">
-                <p class ="titleB"> Tu Dinero: </p>
-                <p class="balance">$<%= current_account.balance %></p>
-                <div class="action-buttons">
-                    <button class="deposit-btn" onclick="location.href='/not_yet'">Ingresar Dinero</button>
-                    <button class="transfer-btn" onclick="location.href='/transfer'">Transferir Dinero</button>
+            <div class="main-column">
+                <div class="balance-section">
+                    <p class ="titleB"> Tu Dinero: </p>
+                    <p class="balance">$<%= current_account.balance %></p>
+                    <div class="action-buttons">
+                        <button class="deposit-btn" onclick="location.href='/not_yet'">Ingresar Dinero</button>
+                        <button class="transfer-btn" onclick="location.href='/transfer'">Transferir Dinero</button>
+                    </div>
+                </div>
+                <div class="features-section">
+                    <button class="feature-button" onclick="location.href='/not_yet'">
+                    <img src="/media/factura.png" alt="Pagar servicios">
+                    Pagar servicios
+                    </button>
+                    <button class="feature-button" onclick="location.href='/not_yet'">
+                    <img src="/media/pago.png" alt="Pedir préstamo">
+                    Pedir Préstamo
+                    </button>
+                    <button class="feature-button" onclick="location.href='/roulette'">
+                    <img src="/media/ruleta.png" alt="Gira y Gana">
+                    Gira y Gana
+                    </button>
+                    <button class="feature-button" onclick="location.href='/not_yet'">
+                    <img src="/media/agregar-amigo.png" alt="Agregar amigos">
+                    Agregar amigos
+                    </button>
+                    <button class="feature-button" onclick="location.href='/not_yet'">
+                    <img src="/media/bitcoin.png" alt="Compra Cripto">
+                    Compra Cripto
+                    </button>
+                    <button class="feature-button" onclick="location.href='/not_yet'">
+                    <img src="/media/dollar-sign.png" alt="Compra Dólares">
+                    Compra Dólares
+                    </button>
                 </div>
             </div>
-            <div class="features-section">
-                <button class="feature-button" onclick="location.href='/not_yet'">
-                <img src="/media/factura.png" alt="Pagar servicios">
-                Pagar servicios
-                </button>
-                <button class="feature-button" onclick="location.href='/not_yet'">
-                <img src="/media/pago.png" alt="Pedir préstamo">
-                Pedir Préstamo
-                </button>
-                <button class="feature-button" onclick="location.href='/roulette'">
-                <img src="/media/ruleta.png" alt="Gira y Gana">
-                Gira y Gana
-                </button>
-                <button class="feature-button" onclick="location.href='/not_yet'">
-                <img src="/media/agregar-amigo.png" alt="Agregar amigos">
-                Agregar amigos
-                </button>
-                <button class="feature-button" onclick="location.href='/not_yet'">
-                <img src="/media/bitcoin.png" alt="Compra Cripto">
-                Compra Cripto
-                </button>
-                <button class="feature-button" onclick="location.href='/not_yet'">
-                <img src="/media/dollar-sign.png" alt="Compra Dólares">
-                Compra Dólares
-                </button>
-            </div>
-            </div class ="history-section">
+            <div class ="history-section">
                 <h2 class="titleH">Mis Transferencias</h2>
-                    </div class ="itemsHistory">
+                <div class ="itemsHistory">
                     <% if @all_transfers && @all_transfers.any? %>
                     <ul>
                     <% @all_transfers.each do |transfer| %>
