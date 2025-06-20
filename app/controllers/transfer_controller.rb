@@ -9,11 +9,6 @@ class TransferController < ApplicationController
   get '/transfer' do
     erb :transfer
   end
-  get '/main_menu' do
-    @transfers = current_account.transfers.order(transfer_date: :desc).to_a || [s]
-    erb :main_menu
-  end
-
   post '/transfer' do
     target_account = Account.find_by(account_alias: params[:account_alias]) || Account.find_by(cvu: params[:cvu])
     transfer_account = current_account
