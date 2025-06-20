@@ -17,5 +17,5 @@
 -  [DRAW.IO](https://github.com/user-attachments/assets/b9298b49-64c3-40d0-9e1b-39a540eb168c)
 
 
-## IMAGENES
+## DIAGRAMA UML
 ![Diagrama de Clases - Grupo 10 drawio](https://github.com/user-attachments/assets/b9298b49-64c3-40d0-9e1b-39a540eb168c)
