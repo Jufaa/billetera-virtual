@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative '../models/user'
 require_relative '../models/account'
+require_relative '../models/pet'
 
 class RegisterController < ApplicationController
   set :views, File.expand_path('../../views', __FILE__) #Para que encuentre al register correctamente cuando centralize con el register_controller
@@ -31,6 +32,10 @@ class RegisterController < ApplicationController
         account_alias:"#{@user.name.downcase}.#{@user.lastname.downcase}.rupay",
         balance:"4000"
       )
+      @user.update(credits: 1000)
+      pet_number = [1, 2, 3].sample
+      @user.pets.create(pet_number: pet_number)
+      @user.update(main_pet_number: pet_number)
       redirect to('/login')
     else
       puts @user.errors.full_messages

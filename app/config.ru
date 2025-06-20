@@ -8,6 +8,9 @@ require './controllers/transfer_controller'
 require './controllers/transfer_failed_controller'
 require './controllers/transfer_success_controller'
 require './controllers/change_account_data_controller'
+require './controllers/market_controller'
+require './controllers/not_yet_controller'
+require './controllers/pets_controller'
 
 use LoginController
 use RegisterController
@@ -18,4 +21,7 @@ use TransferSuccessController
 use TransferFailedController
 use ChangeUserDataController
 use ChangeAccountDataController
+use MarketController
+use NotYetController
+use PetsController
 run App

@@ -1,4 +1,3 @@
-
 require 'bundler/setup'
 require 'sinatra/base'
 require 'sinatra/activerecord'
@@ -13,6 +12,9 @@ require_relative './controllers/transfer_controller'
 require './controllers/transfer_failed_controller'
 require './controllers/transfer_success_controller'
 require './controllers/change_account_data_controller'
+require './controllers/market_controller'
+require './controllers/not_yet_controller'
+require './controllers/pets_controller'
 require './controllers/roulette_controller'
 
 class App < Sinatra::Application

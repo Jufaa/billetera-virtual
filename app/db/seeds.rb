@@ -7,11 +7,14 @@ users = [
 ]
 users.each do |u|
   user = User.create(u)
-  user.save
+  user.update(credits: 1000)
 
-  account = user.create_account(
+  user.create_account(
     cvu: "000000000000000#{user.id.to_s.rjust(4, '0')}",
     account_alias:"#{user.name.downcase}.#{user.lastname.downcase}.rupay",
     balance:"4000"
   )
+  pet_number = [1, 2, 3].sample
+  user.pets.create(pet_number: pet_number)
+  user.update(main_pet_number: pet_number)
 end

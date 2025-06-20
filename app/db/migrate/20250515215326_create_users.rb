@@ -8,6 +8,8 @@ class CreateUsers < ActiveRecord::Migration[8.0]
       t.string :email
       t.string :phone_number
       t.string :password
+      t.integer :credits, default: 0
+      t.integer :main_pet_number
       t.datetime :created_at, null: false
       t.datetime :updated_at, null: false
     end

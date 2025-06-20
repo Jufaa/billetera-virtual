@@ -12,5 +12,12 @@ class ApplicationController < Sinatra::Base
     def current_account
       @current_account ||= Account.find_by(id: session[:user_id])
     end
+    def all_transfers
+    return [] unless current_account
+    @all_transfers ||= Transfer.where(account_id: current_account.id)
+    end
+  end
+  configure :test do
+  disable :protection
   end
 end

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transferir</title>
-    <link rel="stylesheet" type="text/css" href="/css/transfer.css">
+    <title>Mercado</title>
+    <link rel="stylesheet" type="text/css" href="/css/mainMenu.css">
+    <link rel="stylesheet" type="text/css" href="/css/pets.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -18,6 +19,7 @@
         </div>
         <div class="derecha">
             <button class="helpB" onclick="location.href='/not_yet'">❔Ayuda</button>
+            <button class="logoutB" onclick="location.href='/login'">Cerrar Sesión</button>
             <img src="/media/logo.png" alt="Logo Rupay">
         </div>
     </div>
@@ -54,23 +56,33 @@
             </table>
         </div>
         <div class ="main-right">
-            <div class="balance-section">
-                <h2>Transferir a una cuenta</h2>
-                <div class="action-buttons">
-                    <form action="/transfer" method="post">
-                        <label for="account_alias">Ingrese el alias o cvu</label>
-                        <br>
-                        <input type="text" name="account_alias" id="account_alias" placeholder="Ingrese el alias o cvu" required>
-                        <br>
-                        <label for="Dinero">Cuánto desea transferir? Usted dispone de: $<%= current_account.balance %></label><br>
-                        <div class="dinero">
-                            <span>$</span>
-                            <input type="number" name="Dinero" id="Dinero" required>
-                        </div>
-                        <br>
-                        <button type="submit" class="transfer-btn">Transferir Dinero</button>
-                    </form>
-                </div>
+            <div class="pets-section">
+                <p class ="titleB"> Tus creditos: $<%= current_user.credits %> </p>
+                <table class="pet-table">
+                    <tr>
+                        <% pets = [
+                            { name: 'Cubone', number: 1, price: 400, img: '/media/mascota-1-standar.png' },
+                            { name: 'Totodile', number: 2, price: 200, img: '/media/mascota-2-standar.png' },
+                            { name: 'Squirtle', number: 3, price: 600, img: '/media/mascota-3-standar.png' }
+                        ] %>
+
+                        <% pets.each do |pet| %>
+                            <td>
+                                <p><%= pet[:name] %></p>
+                                <img src="<%= pet[:img] %>" alt="pet-<%= pet[:number] %>">
+                                <p>$<%= pet[:price] %></p>
+                                <% if @owned_pet_numbers.include?(pet[:number]) %>
+                                    <button class="buy-btn" disabled style="background-color: grey; cursor: not-allowed;">Comprada</button>
+                                <% else %>
+                                    <form action="/market" method="post">
+                                        <input type="hidden" name="pet_number" value="<%= pet[:number] %>">
+                                        <button type="submit" class="buy-btn">Comprar</button>
+                                    </form>
+                                <% end %>
+                            </td>
+                        <% end %>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>
