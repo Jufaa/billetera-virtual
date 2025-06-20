@@ -1,4 +1,4 @@
-#  RULEPLAY 💸
+#  RUPAY 💸
 ## 👥 Integrantes
 - Juan Cruz Francitorra
 - Sebastián Ammann Berruti
