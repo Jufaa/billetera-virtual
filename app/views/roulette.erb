@@ -102,8 +102,7 @@
         const gradosPorPremio = 360 / totalItems;
         const frenoDePremio = numeroSeleccionado * gradosPorPremio;
         const extraSpins = 360 * (5 + Math.floor(Math.random() * 3));
-        const ajusteCentro = gradosPorPremio / 2;
-        const total = extraSpins + frenoDePremio + ajusteCentro; // para que caiga en el medio, antes caia en el medio de los do
+        const total = extraSpins + frenoDePremio + 75; // para que caiga en el medio, antes caia en el medio de los do
 
         ruleta.style.transition = 'transform 4s';
         ruleta.style.transform = `rotate(-${total}deg)`;
