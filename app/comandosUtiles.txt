@@ -17,5 +17,6 @@ SELECT * FROM users; (ver los datos de los usuarios registrados)
 git checkout nombreRama (Para cambiar de ramas en el proyecto)
 git cherry nombreRama (para traer lo de una rrama a otra) 
 git branch (para saber en que rama me encuentro actualmente)
+docker compose exec app bundle exec rspec (ejecutar tests)
 ...
 

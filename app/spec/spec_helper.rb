@@ -1,14 +1,9 @@
-ENV['RACK_ENV'] = 'test'
+require 'yaml'
+require 'active_record'
 
-require 'rack/test'
-require 'rspec'
-require_relative '../server'  # apunta correctamente a server.rb desde app/spec
+require_relative '../server'
 
-RSpec.configure do |config|
-  config.include Rack::Test::Methods
-end
+ENV['RACK_ENV'] ||= 'test'
 
-# Este método le dice a Rack::Test qué app testear
-def app
-  Sinatra::Application  # o MyApp si tu clase principal hereda de Sinatra::Base con nombre
-end
+db_config = YAML.load_file(File.expand_path('../../config/database.yml', __FILE__), aliases: true)
+ActiveRecord::Base.establish_connection(db_config[ENV['RACK_ENV']])
