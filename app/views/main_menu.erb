@@ -89,9 +89,13 @@
                 Compra Dólares
                 </button>
             </div>
-        </div><% if @transfers && @transfers.any? %>
+        </div>
+        </div>
+               <h2>Mis Transferencias</h2>
+
+<% if @all_transfers && @all_transfers.any? %>
   <ul>
-    <% @transfers.each do |transfer| %>
+    <% @all_transfers.each do |transfer| %>
       <li>
         A: <%= transfer.destiny_account_cvu %> |
         Monto: $<%= transfer.amount %> |
@@ -103,7 +107,6 @@
   <p>No tenés transferencias aún.</p>
 <% end %>
 
-    </div>
 </body>
 </html>
 
